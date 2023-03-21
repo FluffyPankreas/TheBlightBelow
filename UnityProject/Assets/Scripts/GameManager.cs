@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,20 +19,33 @@ public class GameManager : MonoBehaviour
         [SerializeField,Tooltip("The creature that the player is fighting.")]
         private Creature enemyCreature;
 
+        [SerializeField, Tooltip("The label that shows the round number.")]
+        private TMP_Text roundNumberLabel; 
+        
         private int _roundNumber = 1;
         
-        public void Awake()
+        public void Start()
         {
             ResetGame();
         }
-        
+
         public void ResetGame()
         {
             Debug.Log("Resetting the game.");
 
             _roundNumber = 1;
-            
+
             player.ResetForRound();
             enemyCreature.GetComponent<HitPoints>()!.ResetHealth();
+        }
+
+        public void EndTurn()
+        {
+            _roundNumber++;
+        }
+
+        public void Update()
+        {
+            roundNumberLabel.text = _roundNumber.ToString();
         }
 }

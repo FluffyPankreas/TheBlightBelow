@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-        
         _hitPoints = GetComponent<HitPoints>();
         ResetForRound();
     }
