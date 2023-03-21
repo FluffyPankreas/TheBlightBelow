@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    // The game manager will run the game.
+        // controls the start of rounds
+        // controls the end of rounds.
+        // controls the game win/lose conditions.
+        // Manages which room/creature/treasure spawns(eventually).
         
-    }
+        [SerializeField,Tooltip("The creature that the player is fighting.")]
+        private Creature enemyCreature;
 
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField,Tooltip("The player in the game.")]
+        private Player player;
         
-    }
+        public void Awake()
+        {
+            ResetGame();
+        }
+        
+        public void ResetGame()
+        {
+            
+        }
 }
