@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Resetting the game.");
 
             _roundNumber = 1;
-            player.GetComponent<HitPoints>()!.ResetHealth();
+            
+            player.ResetForRound();
             enemyCreature.GetComponent<HitPoints>()!.ResetHealth();
         }
 }

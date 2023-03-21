@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HitPoints))]
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField,Tooltip("The amount of mana the player has to spend each turn.")]
+    private int maxMana = 10;
 
-    // Update is called once per frame
-    void Update()
+    private HitPoints _hitPoints;
+    private int _currentMana;
+
+    public void Awake()
     {
         
+        _hitPoints = GetComponent<HitPoints>();
+        ResetForRound();
+    }
+    
+    public void ResetForRound()
+    {
+        _currentMana = maxMana;
+        _hitPoints.ResetHealth();
     }
 }
