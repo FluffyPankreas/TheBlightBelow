@@ -1597,6 +1597,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicCreature
       objectReference: {fileID: 0}
+    - target: {fileID: 5509144488101271394, guid: c12528bb20aede348bd63df34b138c27, type: 3}
+      propertyPath: attacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509144488101271394, guid: c12528bb20aede348bd63df34b138c27, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8985d9e43cc20784096408930cb80995, type: 2}
+    - target: {fileID: 5509144488101271394, guid: c12528bb20aede348bd63df34b138c27, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2213b258e90c4644184b4d970ef1c1c6, type: 2}
     - target: {fileID: 7681312042532671219, guid: c12528bb20aede348bd63df34b138c27, type: 3}
       propertyPath: m_RootOrder
       value: 4

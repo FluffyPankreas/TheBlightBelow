@@ -15,9 +15,14 @@ public class CreatureAttack : ScriptableObject
     [SerializeField,Tooltip("The maximum amount the dice can roll.")]
     public int diceMax = 6;
 
+    public string AttackName
+    {
+        get { return attackName; }
+    }
+
     public int MakeAttack()
     {
-        Debug.Log("Making attack: " + attackName);
+
         var damageValue = 0;
         
         for (var i = 0; i < diceCount; i++)
@@ -25,6 +30,8 @@ public class CreatureAttack : ScriptableObject
             damageValue += Random.Range(diceMin, diceMax);
         }
 
+
+        Debug.Log("Attack made for " + damageValue.ToString() + " points of damage.");
         return damageValue;
     }
 }

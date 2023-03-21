@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         {
             ResetGame();
         }
+        
+        public void Update()
+        {
+            roundNumberLabel.text = _roundNumber.ToString();
+        }
 
         public void ResetGame()
         {
@@ -38,14 +43,16 @@ public class GameManager : MonoBehaviour
             player.ResetForRound();
             enemyCreature.GetComponent<HitPoints>()!.ResetHealth();
         }
-
+        
         public void EndTurn()
         {
+            Debug.Log("Ending the player turn.");
+            TakeCreatureTurn();
             _roundNumber++;
         }
 
-        public void Update()
+        private void TakeCreatureTurn()
         {
-            roundNumberLabel.text = _roundNumber.ToString();
+            enemyCreature.MakeAttack();
         }
 }
