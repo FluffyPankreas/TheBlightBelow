@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7681312042532671219}
+  - component: {fileID: 5509144488101271394}
   - component: {fileID: 9165020571887450928}
   m_Layer: 0
   m_Name: BasicCreature
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5509144488101271394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565722855510547720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5cd511424930d44a443fc8ecdab959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9165020571887450928
 MonoBehaviour:
   m_ObjectHideFlags: 0
