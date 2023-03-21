@@ -11,11 +11,12 @@ public class Creature : MonoBehaviour
     /// <summary>
     /// Allow the creature to make an attack against the player.
     /// </summary>
-    public void MakeAttack()
+    /// <returns>The amount of damage done.</returns>
+    public int MakeAttack()
     {
         var attackIndex = Random.Range(0, attacks.Count);
         Debug.Log("Attack being made: " + attacks[attackIndex].AttackName);
 
-        attacks[attackIndex].MakeAttack();
+        return attacks[attackIndex].MakeAttack();
     }
 }

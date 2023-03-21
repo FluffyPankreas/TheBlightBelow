@@ -22,7 +22,6 @@ public class CreatureAttack : ScriptableObject
 
     public int MakeAttack()
     {
-
         var damageValue = 0;
         
         for (var i = 0; i < diceCount; i++)

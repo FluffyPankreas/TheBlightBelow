@@ -11,10 +11,19 @@ public class Player : MonoBehaviour
     private HitPoints _hitPoints;
     private int _currentMana;
 
+    public int HitPoints
+    {
+        get { return _hitPoints.CurrentHitPoints; }
+    }
     public void Awake()
     {
         _hitPoints = GetComponent<HitPoints>();
         ResetForRound();
+    }
+
+    public void TakeDamage(int amountOfDamage)
+    {
+        _hitPoints.Damage(amountOfDamage);
     }
     
     public void ResetForRound()

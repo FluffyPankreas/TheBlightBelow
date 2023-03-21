@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
         private Creature enemyCreature;
 
         [SerializeField, Tooltip("The label that shows the round number.")]
-        private TMP_Text roundNumberLabel; 
+        private TMP_Text roundNumberLabel;
+
+        [SerializeField, Tooltip("The label that shows the player hit points.")]
+        private TMP_Text playerHitPoints;
         
         private int _roundNumber = 1;
         
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
         public void Update()
         {
             roundNumberLabel.text = _roundNumber.ToString();
+            playerHitPoints.text = player.HitPoints.ToString();
         }
 
         public void ResetGame()
@@ -53,6 +57,6 @@ public class GameManager : MonoBehaviour
 
         private void TakeCreatureTurn()
         {
-            enemyCreature.MakeAttack();
+            player.TakeDamage(enemyCreature.MakeAttack());
         }
 }
