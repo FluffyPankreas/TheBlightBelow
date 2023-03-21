@@ -15,7 +15,7 @@ public class HitPoints : MonoBehaviour
     public void Awake()
     {
         if (resetHealth)
-            currentHitPoints = maxHitPoints;
+            ResetHealth();
     }
     
     public int CurrentHitPoints
@@ -33,5 +33,10 @@ public class HitPoints : MonoBehaviour
     {
         currentHitPoints -= damageAmount;
         Mathf.Clamp(currentHitPoints, 0, maxHitPoints);
+    }
+
+    public void ResetHealth()
+    {
+        currentHitPoints = maxHitPoints;
     }
 }
