@@ -22,6 +22,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0f28064a3bdb40c5bda164a623dd985
+    m_Address: Assets/SinglePlayerCCGKit/GameData/Enemies/Beholder.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b233966173a5041a797da2fc498c54d0
+    m_Address: Assets/SinglePlayerCCGKit/GameData/Enemies/Dragon.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9659c406322ca4ecf8ca45c5f331f95f
+    m_Address: Assets/SinglePlayerCCGKit/GameData/Enemies/Demon.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b186f2d4d8e0bd84b863d9788f5decc6, type: 2}
   m_SchemaSet:
