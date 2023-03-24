@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System.Collections.Generic;
+using GameSystems;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
@@ -46,6 +47,8 @@ namespace CCGKit
         private EffectResolutionSystem effectResolutionSystem;
         [SerializeField]
         private PoisonResolutionSystem poisonResolutionSystem;
+        [SerializeField] 
+        private StatusResolutionSystem statusResolutionSystem;
         [SerializeField]
         private CharacterDeathSystem characterDeathSystem;
 
@@ -90,7 +93,7 @@ namespace CCGKit
         private int numAssetsToLoad;
         private int numAssetsLoaded;
 
-        private void Start()
+        private void Awake()
         {
             mainCamera = Camera.main;
 
@@ -270,6 +273,7 @@ namespace CCGKit
             enemyBrainSystem.Initialize(playerCharacter, enemyCharacters);
             effectResolutionSystem.Initialize(playerCharacter, enemyCharacters);
             poisonResolutionSystem.Initialize(playerCharacter, enemyCharacters);
+            statusResolutionSystem.Initialize(playerCharacter, enemyCharacters);
             characterDeathSystem.Initialize(playerCharacter, enemyCharacters);
 
             turnManagementSystem.BeginGame();
