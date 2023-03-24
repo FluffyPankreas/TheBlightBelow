@@ -43,7 +43,7 @@ namespace CCGKit
                     var enemyHp = character.Hp;
                     if (enemyHp.Value > 0)
                     {
-                        enemyHp.SetValue(enemyHp.Value-1);
+                        enemyHp.SetValue(enemyHp.Value-poison);
                     }
                 }
             }
