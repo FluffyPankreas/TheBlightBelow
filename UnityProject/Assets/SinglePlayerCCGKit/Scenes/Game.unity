@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1701017332}
   View: {fileID: 390655202}
-  RewardCards: {fileID: 11400000, guid: 7ef9716f3c4bf44dfac487465bc95226, type: 2}
+  RewardCards: {fileID: 11400000, guid: 9e8c045d84afd244f8b9f5980a671d0e, type: 2}
 --- !u!1 &729362284
 GameObject:
   m_ObjectHideFlags: 0
