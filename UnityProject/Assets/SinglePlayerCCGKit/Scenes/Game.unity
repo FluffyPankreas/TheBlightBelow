@@ -593,7 +593,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5ade46602f50f439687be71ff21ee987, type: 2}
   - {fileID: 11400000, guid: a026f77cfd2a340678a61bcca731986d, type: 2}
   characterTemplate:
-    m_AssetGUID: a38da095e6e0d4d799c6cfa500e10b5f
+    m_AssetGUID: be6f4829d3699b646937d60f52dd5fda
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
