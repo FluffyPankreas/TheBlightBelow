@@ -87,6 +87,11 @@ namespace CCGKit
             deck.Shuffle();
         }
 
+        public void DrawCardsFromDeck(IntVariable amount)
+        {
+            DrawCardsFromDeck(amount.Value);
+        }
+
         public void DrawCardsFromDeck(int amount)
         {
             var deckSize = deck.Count;

@@ -111,6 +111,7 @@ namespace CCGKit
 
                 background.sprite = gameInfo.Encounter.Background;
             };
+            
         }
 
         private void CreatePlayer(AssetReference templateRef)
@@ -125,9 +126,12 @@ namespace CCGKit
                 var hp = playerConfig.Hp;
                 var mana = playerConfig.Mana;
                 var shield = playerConfig.Shield;
+                var drawCount = playerConfig.DrawCount;
+                
                 hp.Value = template.Hp;
                 mana.Value = template.Mana;
                 shield.Value = 0;
+                
 
                 manaResetSystem.SetDefaultMana(template.Mana);
 
@@ -192,6 +196,8 @@ namespace CCGKit
                 };
                 obj.Character.Status.Value.Clear();
 
+                playerConfig.DrawCount.Value = template.DrawCount;
+                
                 numAssetsLoaded++;
                 InitializeGame();
             };

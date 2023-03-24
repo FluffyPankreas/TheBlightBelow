@@ -16,6 +16,7 @@ namespace CCGKit
         public IntVariable Shield;
 
         public IntVariable Mana;
+        public IntVariable DrawCount;
 
         public StatusVariable Status;
 

@@ -16,6 +16,7 @@ namespace CCGKit
     {
         public int Hp;
         public int Mana;
+        public int DrawCount;
         public CardLibrary StartingDeck;
         public CardLibrary RewardDeck;
     }
