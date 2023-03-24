@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd67e5e2e21cb494c93012ae29ff6b22, type: 3}
-  m_Name: Warrior
+  m_Name: Fighter
   m_EditorClassIdentifier: 
-  Name: Warrior
+  Name: Figther
   Prefab: {fileID: 2832429604840509992, guid: b9a5ead135d7ae8429ad106dce9463c5, type: 3}
   Actions: []
-  Hp: 80
+  Hp: 60
   Mana: 3
-  DrawCount: 4
+  DrawCount: 3
   StartingDeck: {fileID: 11400000, guid: 68b7896d609a553449044bff938ae0e8, type: 2}
   RewardDeck: {fileID: 11400000, guid: 9e8c045d84afd244f8b9f5980a671d0e, type: 2}
