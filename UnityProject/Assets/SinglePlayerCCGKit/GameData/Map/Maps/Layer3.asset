@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   DistanceFromPreviousLayer:
-    Min: 2
-    Max: 3
+    Min: 1
+    Max: 4
   DistanceBetweenNodes: 2
-  RandomizePosition: 0.4
-  EnemyNodeChance: 1
-  EliteNodeChance: 0
-  RestNodeChance: 0
+  RandomizePosition: 0.35
+  EnemyNodeChance: 0.52
+  EliteNodeChance: 0.5
+  RestNodeChance: 0.25
   TreasureNodeChance: 0
   MerchantNodeChance: 0
   UnknownNodeChance: 0
   BossNodeChance: 0
-  EnemySets:
-  - {fileID: 11400000, guid: 7fa7653f1893e4cc9872550c524e99b8, type: 2}
