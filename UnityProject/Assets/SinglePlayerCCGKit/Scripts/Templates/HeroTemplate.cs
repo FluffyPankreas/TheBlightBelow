@@ -4,6 +4,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CCGKit
 {
@@ -14,7 +15,7 @@ namespace CCGKit
         order = 1)]
     public class HeroTemplate : CharacterTemplate
     {
-        public int Hp;
+        [FormerlySerializedAs("Hp")] public int MaximumHp;
         public int Mana;
         public int DrawCount;
         public CardLibrary StartingDeck;

@@ -73,6 +73,14 @@ namespace CCGKit
         private EndTurnButton endTurnButton;
         [SerializeField]
         private SpriteRenderer background;
+        [SerializeField] 
+        private GameObject combatCanvas;
+        [SerializeField] 
+        private GameObject restCanvas;
+        
+        
+        
+        
 
         [Header("Pools")]
         [SerializeField]
@@ -97,8 +105,12 @@ namespace CCGKit
         {
             mainCamera = Camera.main;
 
+            combatCanvas.SetActive(false);
+            restCanvas.SetActive(false);
+            cardPool.gameObject.SetActive(false);
+            
             cardPool.Initialize();
-
+            
             Addressables.InitializeAsync().Completed += op =>
             {
                 CreatePlayer(characterTemplate);
@@ -112,7 +124,18 @@ namespace CCGKit
                     numAssetsToLoad++;
                 }
 
+                
                 background.sprite = gameInfo.Encounter.Background;
+                if (gameInfo.Encounter.Enemies.Count <= 0)
+                {
+                    Debug.Log("Not an enemy encounter.");
+                    restCanvas.SetActive(true);
+                }
+                else
+                {
+                    combatCanvas.SetActive(true);
+                    cardPool.gameObject.SetActive(true);
+                }
             };
             
         }
@@ -131,7 +154,7 @@ namespace CCGKit
                 var shield = playerConfig.Shield;
                 var drawCount = playerConfig.DrawCount;
                 
-                hp.Value = template.Hp;
+                hp.Value = template.MaximumHp;
                 mana.Value = template.Mana;
                 shield.Value = 0;
                 
@@ -182,7 +205,7 @@ namespace CCGKit
                     }
                 }
 
-                CreateHpWidget(playerConfig.HpWidget, player, hp, template.Hp, shield);
+                CreateHpWidget(playerConfig.HpWidget, player, hp, template.MaximumHp, shield);
                 CreateStatusWidget(playerConfig.StatusWidget, player);
 
                 manaWidget.Initialize(mana);
@@ -195,7 +218,7 @@ namespace CCGKit
                     Shield = shield,
                     Mana = mana, 
                     Status = playerConfig.Status,
-                    MaxHp = template.Hp
+                    MaxHp = template.MaximumHp
                 };
                 obj.Character.Status.Value.Clear();
 

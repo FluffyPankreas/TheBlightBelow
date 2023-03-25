@@ -17,14 +17,24 @@ namespace CCGKit
         public string DeveloperDescription = string.Empty;
 #endif
 
-        public int Value;
-
         public GameEventInt ValueChangedEvent;
 
-        public void SetValue(int value)
+        [SerializeField,Tooltip("The value stored by this integer variable.")]
+        private int _value;
+
+        public int Value
         {
-            Value = value; 
-            ValueChangedEvent?.Raise(value);
+            get { return _value;}
+            set
+            {
+                _value = value; 
+                ValueChangedEvent?.Raise(_value);
+            }
+        }
+
+        public void SetValue(int newValue)
+        {
+            Value = newValue;
         }
     }
 }

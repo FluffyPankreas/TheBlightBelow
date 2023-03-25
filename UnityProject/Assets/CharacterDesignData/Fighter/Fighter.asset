@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Figther
   Prefab: {fileID: 2832429604840509992, guid: b9a5ead135d7ae8429ad106dce9463c5, type: 3}
   Actions: []
-  Hp: 60
+  MaximumHp: 75
   Mana: 3
   DrawCount: 3
   StartingDeck: {fileID: 11400000, guid: 68b7896d609a553449044bff938ae0e8, type: 2}

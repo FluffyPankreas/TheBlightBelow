@@ -17,7 +17,7 @@ MonoBehaviour:
     Min: 0
     Max: 0
   DistanceBetweenNodes: 2
-  RandomizePosition: 0.4
+  RandomizePosition: 0.35
   EnemyNodeChance: 1
   EliteNodeChance: 0
   RestNodeChance: 0
@@ -25,5 +25,3 @@ MonoBehaviour:
   MerchantNodeChance: 0
   UnknownNodeChance: 0
   BossNodeChance: 0
-  EnemySets:
-  - {fileID: 11400000, guid: e632a2fb5c31e4a2dbfcb1b59caa6b0d, type: 2}
