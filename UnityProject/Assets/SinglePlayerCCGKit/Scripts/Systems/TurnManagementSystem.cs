@@ -21,7 +21,8 @@ namespace CCGKit
         public GameEvent PlayerTurnEnded;
         public GameEvent EnemyTurnBegan;
         public GameEvent EnemyTurnEnded;
-
+        public GameEvent EncounterEnded; 
+        
         private bool isEnemyTurn;
         private float accTime;
 
@@ -74,6 +75,10 @@ namespace CCGKit
         public void SetEndOfGame(bool value)
         {
             isEndOfGame = value;
+            if (isEndOfGame)
+            {
+                EncounterEnded.Raise();
+            }
         }
 
         public bool IsEndOfGame()

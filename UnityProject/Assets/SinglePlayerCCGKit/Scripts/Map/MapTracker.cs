@@ -28,6 +28,10 @@ namespace CCGKit
         private EncounterList eliteEnemies;
         [SerializeField]
         private EncounterList bosses;
+        [SerializeField] 
+        private EncounterList merchants;
+        [SerializeField] 
+        private EncounterList rests;
 #pragma warning restore 649
 
         private Map map;
@@ -74,6 +78,31 @@ namespace CCGKit
                 {
                     node.Encounter = bosses.Encounters[0];
                 }
+
+                if (node.Type == NodeType.Merchant) 
+                {
+                    // TODO: Load the merchant stuff here.
+                    node.Encounter = merchants.Encounters[rng.Next(0, merchants.Encounters.Count - 1)];// Choose a random Merchant Encounter.
+                }
+                
+                if (node.Type == NodeType.Rest)
+                {
+                    node.Encounter = rests.Encounters[0];
+                }
+                
+                if (node.Type == NodeType.Treasure) 
+                {
+                    // TODO: Load the treasure stuff here.
+                }
+                
+                if (node.Type == NodeType.Unknown) 
+                {
+                    // TODO: Load the unkown stuff here.
+                }
+                
+                
+
+
             }
         }
 
