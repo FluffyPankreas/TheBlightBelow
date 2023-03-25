@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: EliteEnemies
   m_EditorClassIdentifier: 
   Encounters:
-  - Name: Beholder
-    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+  - Name: 
+    Background: {fileID: 0}
     Enemies:
-    - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
+    - m_AssetGUID: b233966173a5041a797da2fc498c54d0
       m_SubObjectName: 
       m_SubObjectType: 
-    - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
-      m_SubObjectName: 
-      m_SubObjectType: 
+      m_EditorAssetChanged: 0

@@ -13,9 +13,50 @@ MonoBehaviour:
   m_Name: EasyEnemies
   m_EditorClassIdentifier: 
   Encounters:
-  - Name: Beholder
+  - Name: Flesh Beholder
+    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Enemies:
+    - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: Rock Beholder
+    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Enemies:
+    - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: Flesh Beholder x2
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
     Enemies:
     - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
       m_SubObjectName: 
       m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: Rock Beholder x2
+    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Enemies:
+    - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: Flesh Beholder + Magma Beholder
+    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Enemies:
+    - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
