@@ -87,10 +87,12 @@ namespace CCGKit
         {
             if (PlayerPrefs.HasKey(mapPrefKey))
             {
+                Debug.Log("Loading previously saved map.");
                 var json = PlayerPrefs.GetString(mapPrefKey);
                 return JsonUtility.FromJson<Map>(json);
             }
 
+            Debug.Log("Generating a new map.");
             var map = mapGenerator.GenerateMap(rng);
             return map;
         }
