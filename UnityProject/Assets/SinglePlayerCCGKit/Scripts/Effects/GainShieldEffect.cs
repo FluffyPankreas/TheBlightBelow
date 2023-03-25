@@ -14,7 +14,7 @@ namespace CCGKit
     {
         public override string GetName()
         {
-            return $"Gain {Value.ToString()} Shield";
+            return $"Gain {Value.ToString()} Defence";
         }
 
         public override void Resolve(RuntimeCharacter instigator, RuntimeCharacter target)
