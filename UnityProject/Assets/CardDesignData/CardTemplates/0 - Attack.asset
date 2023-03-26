@@ -15,7 +15,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 1
-  Value: 200
+  Value: 6
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
