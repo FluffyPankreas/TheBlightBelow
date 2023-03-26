@@ -10,6 +10,9 @@ namespace GameSystems
             var weak = Player.Character.Status.GetValue("Weak");
             if (weak > 0)
                 Player.Character.Status.SetValue("Weak", --weak);
+
+            //poo poo code
+
         }
     }
 }
