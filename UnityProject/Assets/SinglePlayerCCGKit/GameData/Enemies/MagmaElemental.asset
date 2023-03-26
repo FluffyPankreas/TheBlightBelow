@@ -172,25 +172,25 @@ MonoBehaviour:
   - {fileID: 6760965525498649221}
   - {fileID: 3792673416083405340}
   Probabilities:
-  - Value: 12
+  - Value: 7
     Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 34
+  - Value: 7
     Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 21
+  - Value: 16
     Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 13
+  - Value: 15
     Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 8
+  - Value: 10
+    Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
+  - Value: 10
+    Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
+  - Value: 10
     Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
   - Value: 5
-    Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 3
-    Sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
-  - Value: 2
     Sprite: {fileID: 21300000, guid: 4e80e011253fd3346b42dca565a330a1, type: 3}
-  - Value: 1
+  - Value: 5
     Sprite: {fileID: 21300000, guid: 4e80e011253fd3346b42dca565a330a1, type: 3}
-  - Value: 1
+  - Value: 5
     Sprite: {fileID: 21300000, guid: 4e80e011253fd3346b42dca565a330a1, type: 3}
 --- !u!114 &-5978651778815592253
 MonoBehaviour:
@@ -475,8 +475,8 @@ MonoBehaviour:
   - {fileID: 5998279882273832137}
   - {fileID: -2667289564955638810}
   - {fileID: -7548985105162259709}
-  HpLow: 150
-  HpHigh: 200
+  HpLow: 250
+  HpHigh: 300
   Patterns:
   - {fileID: -6182772636118308280}
 --- !u!114 &125747836140305373

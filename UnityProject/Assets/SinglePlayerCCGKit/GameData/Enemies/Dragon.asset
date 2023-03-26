@@ -80,7 +80,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 0
-  Value: 10
+  Value: 7
 --- !u!114 &-7548985105162259709
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -692,7 +692,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 0
-  Value: 10
+  Value: 7
 --- !u!114 &4432740002878514591
 MonoBehaviour:
   m_ObjectHideFlags: 1
