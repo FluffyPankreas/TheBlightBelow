@@ -19,11 +19,10 @@ namespace CCGKit
 
         public void AddCards(List<RuntimeCard> cards)
         {
-            var sortedCards = cards.OrderBy(x => x.Template.Id).ToList();
+            var sortedCards = cards.OrderBy(x => x.Template.Name).ToList();
             foreach (var card in sortedCards)
             {
-                var widget = Instantiate(CardPrefab);
-                widget.transform.SetParent(Content.transform, false);
+                var widget = Instantiate(CardPrefab, Content.transform, false);
                 widget.GetComponent<CardWidget>().SetInfo(card);
                 widgets.Add(widget);
             }
@@ -31,18 +30,20 @@ namespace CCGKit
 
         private void OnEnable()
         {
-            foreach (var widget in widgets)
-            {
-                Destroy(widget);
-            }
-
-            widgets.Clear();
+            
 
             HandPresentationSystem.SetHandCardsInteractable(false);
         }
 
         private void OnDisable()
         {
+            foreach (var widget in widgets)
+            {
+                Destroy(widget);
+            }
+
+            widgets.Clear();
+            
             HandPresentationSystem.SetHandCardsInteractable(true);
         }
     }
