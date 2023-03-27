@@ -15,23 +15,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 0
-  Value: 9
---- !u!114 &-5512738061705743386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c6cc1e3715bf47e4ac4b5e000e9c445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SourceActions: []
-  TargetActions: []
-  Target: 1
-  Value: 9
+  Value: 5
 --- !u!114 &-1607760935069591667
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58,14 +42,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be4065f389b584708aa1b58cf25db28b, type: 3}
-  m_Name: 2 - PowerAttack
+  m_Name: Shield Block[001]
   m_EditorClassIdentifier: 
-  Id: 2
-  Name: Power Attack
-  Cost: 2
+  Id: 1
+  Name: Shield Block
+  Cost: 1
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  Picture: {fileID: 21300000, guid: 0d7c20115f9a6d74e854f7f543aed94e, type: 3}
-  Type: {fileID: 11400000, guid: 52b093f5006cf7c40883b91107cef4b3, type: 2}
+  Picture: {fileID: 21300000, guid: 9b0fd2da10f404ed6973b1a2a9aa9dc2, type: 3}
+  Type: {fileID: 11400000, guid: a9ea2ae22734eea43913d97ecccd577b, type: 2}
   Upgrade: {fileID: 0}
   Effects:
-  - {fileID: -5512738061705743386}
+  - {fileID: -7407237684061601805}

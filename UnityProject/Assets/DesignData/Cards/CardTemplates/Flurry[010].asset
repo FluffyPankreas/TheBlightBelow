@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be4065f389b584708aa1b58cf25db28b, type: 3}
-  m_Name: 10 - Flurry
+  m_Name: Flurry[010]
   m_EditorClassIdentifier: 
   Id: 10
   Name: Flurry

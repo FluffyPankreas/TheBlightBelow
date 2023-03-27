@@ -15,7 +15,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 0
-  Value: 5
+  Value: 3
 --- !u!114 &-1607760935069591667
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,14 +42,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be4065f389b584708aa1b58cf25db28b, type: 3}
-  m_Name: 1 - Shield Block
+  m_Name: DrawCards[005]
   m_EditorClassIdentifier: 
-  Id: 1
-  Name: Shield Block
+  Id: 5
+  Name: Draw Cards
   Cost: 1
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  Picture: {fileID: 21300000, guid: 9b0fd2da10f404ed6973b1a2a9aa9dc2, type: 3}
+  Picture: {fileID: 21300000, guid: b114ad17fd0bcff418c1fdfb26bfe2c2, type: 3}
   Type: {fileID: 11400000, guid: a9ea2ae22734eea43913d97ecccd577b, type: 2}
   Upgrade: {fileID: 0}
   Effects:
-  - {fileID: -7407237684061601805}
+  - {fileID: 1003125375387670009}
+--- !u!114 &1003125375387670009
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f92b5a12774ccf9fb0830e400942c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SourceActions: []
+  TargetActions: []
+  Amount: 2
