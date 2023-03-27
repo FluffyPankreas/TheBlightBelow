@@ -43,12 +43,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a96bde042c8f5fa4aa90063d107e5351
-    m_Address: Assets/SinglePlayerCCGKit/GameData/Enemies/RockBeholder.asset
+    m_Address: RockBeholder
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 410de94373504bb4eae737aa77196e48
-    m_Address: Assets/SinglePlayerCCGKit/GameData/Enemies/MagmaElemental.asset
+    m_Address: MagmaElemental
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
