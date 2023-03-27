@@ -2,6 +2,7 @@
 // This code can only be used under the standard Unity Asset Store EULA,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
+using GameArchitecture;
 using UnityEditor;
 using UnityEngine;
 
@@ -111,8 +112,8 @@ namespace CCGKit
                                 EditorGUILayout.LabelField(
                                     new GUIContent("Deck", "The starting deck of this character."),
                                     GUILayout.Width(EditorGUIUtility.labelWidth));
-                                currentPlayer.StartingDeck = (CardLibrary) EditorGUILayout.ObjectField(
-                                    currentPlayer.StartingDeck, typeof(CardLibrary), false, GUILayout.Width(200));
+                                currentPlayer.StartingDeck = (CardTemplateLibrary) EditorGUILayout.ObjectField(
+                                    currentPlayer.StartingDeck, typeof(CardTemplateLibrary), false, GUILayout.Width(200));
                             }
                             GUILayout.EndHorizontal();
 
@@ -123,8 +124,8 @@ namespace CCGKit
                                 EditorGUILayout.LabelField(
                                     new GUIContent("Rewards", "The reward deck of this character."),
                                     GUILayout.Width(EditorGUIUtility.labelWidth));
-                                currentPlayer.RewardDeck = (CardLibrary) EditorGUILayout.ObjectField(
-                                    currentPlayer.RewardDeck, typeof(CardLibrary), false, GUILayout.Width(200));
+                                currentPlayer.RewardDeck = (CardTemplateLibrary) EditorGUILayout.ObjectField(
+                                    currentPlayer.RewardDeck, typeof(CardTemplateLibrary), false, GUILayout.Width(200));
                             }
                             GUILayout.EndHorizontal();
                         }

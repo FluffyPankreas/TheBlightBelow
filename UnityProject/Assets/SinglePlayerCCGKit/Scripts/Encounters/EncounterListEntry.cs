@@ -13,6 +13,7 @@ namespace CCGKit
     public class EncounterListEntry
     {
         public string Name;
+        public NodeType EncounterType;
         public Sprite Background;
         public List<AssetReference> Enemies = new List<AssetReference>();
     }

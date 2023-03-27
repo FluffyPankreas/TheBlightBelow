@@ -3,7 +3,9 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System.Collections.Generic;
+using GameArchitecture;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CCGKit
 {
@@ -22,8 +24,15 @@ namespace CCGKit
     {
         public HandPresentationSystem HandPresentationSystem;
 
-        private List<RuntimeCard> deck;
-        private List<RuntimeCard> discardPile;
+        [SerializeField, Tooltip("The run deck to load intially")]
+        private CardTemplateLibrary runDeck;
+        
+        [SerializeField, Tooltip("The runtime variable for the draw deck.")]
+        private CardTemplateLibrary drawDeck;
+        
+        [SerializeField,Tooltip("The runtime variable for the discard deck,")]
+        private CardTemplateLibrary discardDeck;
+        
         private List<RuntimeCard> hand;
 
         private DeckWidget deckWidget;
@@ -34,57 +43,46 @@ namespace CCGKit
         private const int InitialDiscardPileCapacity = 30;
         private const int InitialHandCapacity = 30;
 
-        public void Initialize(DeckWidget deck, DiscardPileWidget discardPile)
+        public void Initialize(DeckWidget boostrapDeckWidget, DiscardPileWidget bootstrapDiscardPileWidget)
         {
-            deckWidget = deck;
-            discardPileWidget = discardPile;
+            deckWidget = boostrapDeckWidget;
+            discardPileWidget = bootstrapDiscardPileWidget;
+
+            InitializeDrawDeck(runDeck);
         }
 
         private void Start()
         {
-            deck = new List<RuntimeCard>(InitialDeckCapacity);
-            discardPile = new List<RuntimeCard>(InitialDiscardPileCapacity);
+            drawDeck.Cards.Clear();
+            discardDeck.Cards.Clear();
+            
             hand = new List<RuntimeCard>(InitialHandCapacity);
         }
 
-        public List<RuntimeCard> GetDeck()
+        public CardTemplateLibrary GetDeck()
         {
-            return deck;
+            return drawDeck;
         }
 
-        public List<RuntimeCard> GetDiscardPile()
+        public CardTemplateLibrary GetDiscardPile()
         {
-            return discardPile;
+            return discardDeck;
         }
 
-        public int LoadDeck(List<CardTemplate> playerDeck)
+        private void InitializeDrawDeck(CardTemplateLibrary runDeck)
         {
-            var deckSize = 0;
-
-            foreach (var template in playerDeck)
+            foreach (var template in runDeck.Cards)
             {
-                // Skip over invalid entries.
-                if (template == null)
-                    continue;
-
-                var card = new RuntimeCard 
-                {
-                    Template = template
-                };
-                deck.Add(card);
-
-                ++deckSize;
+                drawDeck.Add(template);
             }
 
-            deckWidget.SetAmount(deck.Count);
+            deckWidget.SetAmount(drawDeck.Count);
             discardPileWidget.SetAmount(0);
-
-            return deckSize;
         }
 
         public void ShuffleDeck()
         {
-            deck.Shuffle();
+            drawDeck.ShuffleLibrary();
         }
 
         public void DrawCardsFromDeck(IntVariable amount)
@@ -94,7 +92,7 @@ namespace CCGKit
 
         public void DrawCardsFromDeck(int amount)
         {
-            var deckSize = deck.Count;
+            var deckSize = drawDeck.Count;
             // If there are enough cards in the deck, just draw the cards from it.
             if (deckSize >= amount)
             {
@@ -103,29 +101,33 @@ namespace CCGKit
                 var drawnCards = new List<RuntimeCard>(amount);
                 for (var i = 0; i < amount; i++)
                 {
-                    var card = deck[0];
-                    deck.RemoveAt(0);
-                    hand.Add(card);
-                    drawnCards.Add(card);
+                    var card = drawDeck.Cards[0];
+                    drawDeck.Cards.RemoveAt(0);
+
+
+                    var newRuntimeCard = new RuntimeCard() {Template = card}; 
+                    hand.Add(newRuntimeCard);
+                    drawnCards.Add(newRuntimeCard);
                 }
 
                 HandPresentationSystem.CreateCardsInHand(drawnCards, prevDeckSize);
             }
+            
             // If there are not enough cards in the deck, first shuffle the discard pile into
             // the deck and then draw from the deck normally.
             else
             {
-                for (var i = 0; i < discardPile.Count; i++)
-                    deck.Add(discardPile[i]);
+                for (var i = 0; i < discardDeck.Count; i++)
+                    drawDeck.Add(discardDeck.Cards[i]);
 
-                discardPile.Clear();
+                discardDeck.Cards.Clear();
 
-                HandPresentationSystem.UpdateDiscardPileSize(discardPile.Count);
+                HandPresentationSystem.UpdateDiscardPileSize(discardDeck.Count);
 
                 // Prevent trying to draw more cards than those available.
-                if (amount > deck.Count + discardPile.Count)
+                if (amount > drawDeck.Count + discardDeck.Count)
                 {
-                    amount = deck.Count + discardPile.Count;
+                    amount = drawDeck.Count + discardDeck.Count;
                 }
                 DrawCardsFromDeck(amount);
             }
@@ -135,13 +137,13 @@ namespace CCGKit
         {
             var idx = hand.IndexOf(card);
             hand.RemoveAt(idx);
-            discardPile.Add(card);
+            discardDeck.Add(card.Template);
         }
 
         public void MoveCardsToDiscardPile()
         {
             foreach (var card in hand)
-                discardPile.Add(card);
+                discardDeck.Add(card.Template);
 
             hand.Clear();
         }

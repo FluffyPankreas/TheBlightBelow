@@ -32,6 +32,11 @@ namespace CCGKit
         private EncounterList merchants;
         [SerializeField] 
         private EncounterList rests;
+        [SerializeField] 
+        private EncounterList treasures;
+        [SerializeField] 
+        private EncounterList unkowns;
+        
 #pragma warning restore 649
 
         private Map map;
@@ -90,14 +95,16 @@ namespace CCGKit
                     node.Encounter = rests.Encounters[0];
                 }
                 
-                if (node.Type == NodeType.Treasure) 
+                if (node.Type == NodeType.Treasure)
                 {
+                    node.Encounter = treasures.Encounters[0];
                     // TODO: Load the treasure stuff here.
                 }
                 
                 if (node.Type == NodeType.Unknown) 
                 {
-                    // TODO: Load the unkown stuff here.
+                    node.Encounter = unkowns.Encounters[0];
+                    // TODO: Load the unknown stuff here.
                 }
                 
                 

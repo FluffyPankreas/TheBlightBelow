@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System.Collections.Generic;
+using GameArchitecture;
 using UnityEngine;
 
 namespace CCGKit
@@ -16,12 +17,12 @@ namespace CCGKit
 
         private List<GameObject> widgets = new List<GameObject>(16);
 
-        public void AddCards(CardLibrary cards)
+        public void AddCards(CardTemplateLibrary cardsTemplate)
         {
             var randomCards = new List<CardTemplate>();
-            foreach (var entry in cards.Entries)
+            foreach (var entry in cardsTemplate.Cards)
             {
-                randomCards.Add(entry.Card);
+                randomCards.Add(entry);
             }
             randomCards.Shuffle();
 

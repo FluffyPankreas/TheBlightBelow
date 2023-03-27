@@ -2,6 +2,7 @@
 // This code can only be used under the standard Unity Asset Store EULA,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
+using GameArchitecture;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace CCGKit
     /// </summary>
     public class CardLibrariesTab : EditorTab
     {
-        private CardLibrary currentCardLibrary;
+        private CardTemplateLibrary _currentCardTemplateLibrary;
 
         private ReorderableList entriesList;
         private CardLibraryEntry currentEntry;
@@ -30,24 +31,24 @@ namespace CCGKit
 
             GUILayout.Space(15);
 
-            var prevCollection = currentCardLibrary;
+            var prevCollection = _currentCardTemplateLibrary;
             GUILayout.BeginHorizontal();
             {
                 GUILayout.Space(10);
-                currentCardLibrary = (CardLibrary) EditorGUILayout.ObjectField(
-                    "Asset", currentCardLibrary, typeof(CardLibrary), false, GUILayout.Width(340));
+                _currentCardTemplateLibrary = (CardTemplateLibrary) EditorGUILayout.ObjectField(
+                    "Asset", _currentCardTemplateLibrary, typeof(CardTemplateLibrary), false, GUILayout.Width(340));
             }
             GUILayout.EndHorizontal();
 
-            if (currentCardLibrary != null && currentCardLibrary != prevCollection)
+            if (_currentCardTemplateLibrary != null && _currentCardTemplateLibrary != prevCollection)
                 CreateCardsList();
 
-            if (currentCardLibrary != null)
+            if (_currentCardTemplateLibrary != null)
             {
                 DrawCurrentCardLibrary();
 
                 if (GUI.changed)
-                    EditorUtility.SetDirty(currentCardLibrary);
+                    EditorUtility.SetDirty(_currentCardTemplateLibrary);
             }
 
             EditorGUIUtility.labelWidth = oldLabelWidth;
@@ -71,8 +72,8 @@ namespace CCGKit
                             {
                                 EditorGUILayout.LabelField(new GUIContent("Name", "The name of this card library."),
                                     GUILayout.Width(EditorGUIUtility.labelWidth));
-                                currentCardLibrary.Name =
-                                    EditorGUILayout.TextField(currentCardLibrary.Name, GUILayout.Width(150));
+                                _currentCardTemplateLibrary.Name =
+                                    EditorGUILayout.TextField(_currentCardTemplateLibrary.Name, GUILayout.Width(150));
                             }
                             GUILayout.EndHorizontal();
                         }
@@ -104,24 +105,25 @@ namespace CCGKit
 
         private void CreateCardsList()
         {
-            entriesList = SetupReorderableList("Cards", currentCardLibrary.Entries, (rect, x) =>
+            //TODO: Fix the editor code
+            /*entriesList = SetupReorderableList("Cards", _currentCardTemplateLibrary.Cards, (rect, c) =>
                 {
-                    if (x.Card != null)
+                    if (c != null)
                         EditorGUI.LabelField(new Rect(rect.x, rect.y, 200, EditorGUIUtility.singleLineHeight),
-                            x.Card.Name);
+                            c.Name);
                 },
                 x => { currentEntry = x; },
                 () =>
                 {
-                    var entry = new CardLibraryEntry
+                    var entry = new CardTemplate()
                     {
                         Card = null,
                         NumCopies = 1
                     };
-                    currentCardLibrary.Entries.Add(entry);
-                    currentEntry = entry;
+                    _currentCardTemplateLibrary.Add(entry);
+                    curentEntry = entry;
                 },
-                x => { currentEntry = null; });
+                x => { currentEntry = null; });*/
         }
 
         private void DrawCurrentEntry()

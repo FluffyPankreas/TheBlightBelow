@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
+using GameArchitecture;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -18,7 +19,7 @@ namespace CCGKit
         [FormerlySerializedAs("Hp")] public int MaximumHp;
         public int Mana;
         public int DrawCount;
-        public CardLibrary StartingDeck;
-        public CardLibrary RewardDeck;
+        public CardTemplateLibrary StartingDeck;
+        public CardTemplateLibrary RewardDeck;
     }
 }

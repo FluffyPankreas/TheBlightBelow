@@ -77,11 +77,9 @@ namespace CCGKit
         private GameObject combatCanvas;
         [SerializeField] 
         private GameObject restCanvas;
+        [SerializeField] 
+        private GameObject upgradeCanvas;
         
-        
-        
-        
-
         [Header("Pools")]
         [SerializeField]
         private ObjectPool cardPool;
@@ -126,18 +124,31 @@ namespace CCGKit
 
                 
                 background.sprite = gameInfo.Encounter.Background;
-                if (gameInfo.Encounter.Enemies.Count <= 0)
+                switch (gameInfo.Encounter.EncounterType)
                 {
-                    Debug.Log("Not an enemy encounter.");
-                    restCanvas.SetActive(true);
-                }
-                else
-                {
-                    combatCanvas.SetActive(true);
-                    cardPool.gameObject.SetActive(true);
+                    case NodeType.Rest:
+                        Debug.Log("Rest encounter.");
+                        restCanvas.SetActive(true);
+                        break;
+                    case NodeType.Merchant:
+                        Debug.Log("Merchant encounter.");
+                        upgradeCanvas.SetActive(true);
+                        break;
+                    case NodeType.Treasure:
+                        Debug.Log("Treasure encounter.");
+                        upgradeCanvas.SetActive(true);
+                        break;
+                    case NodeType.Unknown:
+                        Debug.Log("Unknown encounter.");
+                        upgradeCanvas.SetActive(true);
+                        break;
+                    default:
+                        Debug.Log("Monster encounter.");
+                        combatCanvas.SetActive(true);
+                        cardPool.gameObject.SetActive(true);
+                        break;
                 }
             };
-            
         }
 
         private void CreatePlayer(AssetReference templateRef)
@@ -145,8 +156,8 @@ namespace CCGKit
             var handle = Addressables.LoadAssetAsync<HeroTemplate>(templateRef);
             handle.Completed += op =>
             {
-                var template = op.Result;
-                player = Instantiate(template.Prefab, playerPivot);
+                var characterTemplate = op.Result;
+                player = Instantiate(characterTemplate.Prefab, playerPivot);
                 Assert.IsNotNull(player);
 
                 var hp = playerConfig.Hp;
@@ -154,12 +165,12 @@ namespace CCGKit
                 var shield = playerConfig.Shield;
                 var drawCount = playerConfig.DrawCount;
                 
-                hp.Value = template.MaximumHp;
-                mana.Value = template.Mana;
+                hp.Value = characterTemplate.MaximumHp;
+                mana.Value = characterTemplate.Mana;
                 shield.Value = 0;
                 
 
-                manaResetSystem.SetDefaultMana(template.Mana);
+                manaResetSystem.SetDefaultMana(characterTemplate.Mana);
 
                 if (PlayerPrefs.HasKey(saveDataPrefKey))
                 {
@@ -171,25 +182,23 @@ namespace CCGKit
                     playerDeck.Clear();
                     foreach (var id in saveData.Deck)
                     {
-                        var card = template.StartingDeck.Entries.Find(x => x.Card.Id == id);
+
+                        var card = characterTemplate.StartingDeck.Cards.Find(c => c.Id == id);
                         if (card == null)
                         {
-                            card = template.RewardDeck.Entries.Find(x => x.Card.Id == id);
+                            card = characterTemplate.RewardDeck.Cards.Find(c => c.Id == id);
                         }
                         if (card != null)
                         {
-                            playerDeck.Add(card.Card);
+                            playerDeck.Add(card);
                         }
                     }
                 }
                 else
                 {
-                    foreach (var entry in template.StartingDeck.Entries)
+                    foreach (var cardTemplate in characterTemplate.StartingDeck.Cards)
                     {
-                        for (var i = 0; i < entry.NumCopies; i++)
-                        {
-                            playerDeck.Add(entry.Card);
-                        }
+                        playerDeck.Add(cardTemplate);
                     }
                 }
 
@@ -205,24 +214,24 @@ namespace CCGKit
                     }
                 }
 
-                CreateHpWidget(playerConfig.HpWidget, player, hp, template.MaximumHp, shield);
+                CreateHpWidget(playerConfig.HpWidget, player, hp, characterTemplate.MaximumHp, shield);
                 CreateStatusWidget(playerConfig.StatusWidget, player);
 
                 manaWidget.Initialize(mana);
 
                 var obj = player.GetComponent<CharacterObject>();
-                obj.Template = template;
+                obj.Template = characterTemplate;
                 obj.Character = new RuntimeCharacter
                 { 
                     Hp = hp, 
                     Shield = shield,
                     Mana = mana, 
                     Status = playerConfig.Status,
-                    MaxHp = template.MaximumHp
+                    MaxHp = characterTemplate.MaximumHp
                 };
                 obj.Character.Status.Value.Clear();
 
-                playerConfig.DrawCount.Value = template.DrawCount;
+                playerConfig.DrawCount.Value = characterTemplate.DrawCount;
                 
                 numAssetsLoaded++;
                 InitializeGame();
@@ -281,7 +290,8 @@ namespace CCGKit
             }
 
             deckDrawingSystem.Initialize(deckWidget, discardPileWidget);
-            var deckSize = deckDrawingSystem.LoadDeck(playerDeck);
+            
+            //var deckSize = deckDrawingSystem.LoadEncounterDrawDeck(playerDeck);
             deckDrawingSystem.ShuffleDeck();
 
             handPresentationSystem.Initialize(cardPool, deckWidget, discardPileWidget);

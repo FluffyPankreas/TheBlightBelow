@@ -28,12 +28,16 @@ public class RestSystems : MonoBehaviour
 
         var maxHP = maxHpHackToGetItWorking;// TODO: This needs to be loaded in from the character template, or actually the current max HP of the character.
         var amountToHeal = Mathf.RoundToInt(maxHP * percentToHeal);
-        Debug.Log("Healing the player.");
 
         var newHealth = playerHP.Value + amountToHeal;
         newHealth = Mathf.FloorToInt(Mathf.Clamp(newHealth, 0, maxHpHackToGetItWorking));
         playerHP.Value = newHealth;
         
+        EndEncounter();
+    }
+
+    public void EndEncounter()
+    {
         var gameInfo = FindObjectOfType<GameInfo>();
         gameInfo.PlayerWonEncounter = true;
         

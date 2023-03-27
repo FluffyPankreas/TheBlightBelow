@@ -2,7 +2,9 @@
 // This code can only be used under the standard Unity Asset Store End User License Agreement,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
+using GameArchitecture;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CCGKit
 {
@@ -11,12 +13,12 @@ namespace CCGKit
         public Canvas Canvas;
         public CardRewardView View;
 
-        public CardLibrary RewardCards;
+        [FormerlySerializedAs("RewardCards")] public CardTemplateLibrary rewardCardsTemplate;
 
         public void OnPlayerRedeemedReward()
         {
             Canvas.gameObject.SetActive(true);
-            View.AddCards(RewardCards);
+            View.AddCards(rewardCardsTemplate);
         }
     }
 }
