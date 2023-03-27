@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2258832129293106533}
   - component: {fileID: 2597043322157136139}
   m_Layer: 7
-  m_Name: RockBeholder
+  m_Name: oldRockBeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
