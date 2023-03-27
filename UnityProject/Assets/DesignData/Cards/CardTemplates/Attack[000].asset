@@ -15,7 +15,7 @@ MonoBehaviour:
   SourceActions: []
   TargetActions: []
   Target: 1
-  Value: 200
+  Value: 6
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,6 +34,23 @@ MonoBehaviour:
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   Picture: {fileID: 21300000, guid: 4f1b432df497b0b47a05e7455b767b54, type: 3}
   Type: {fileID: 11400000, guid: 52b093f5006cf7c40883b91107cef4b3, type: 2}
-  Upgrade: {fileID: 0}
+  ChaosUpgrade: {fileID: 11400000, guid: d1a78e68c3ed1ef49bb75dfd576c7f47, type: 2}
+  OrderUpgrade: {fileID: 11400000, guid: 4ad9ab9ca3efb864fa120a415704ee57, type: 2}
   Effects:
-  - {fileID: -1607760935069591667}
+  - {fileID: 4863348576195567416}
+--- !u!114 &4863348576195567416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6cc1e3715bf47e4ac4b5e000e9c445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SourceActions: []
+  TargetActions: []
+  Target: 1
+  Value: 6
