@@ -14,10 +14,8 @@ namespace GameArchitecture
     public class CardTemplateLibrary : ScriptableObject
     {
 #if UNITY_EDITOR
-        [Multiline,Tooltip("Give a short description of where this variable is meant to be used.")]
-        public string variablePurpose = string.Empty;
-        [Tooltip("Indicate whether this is going to change at runtime.")]
-        public bool meantToBeUsedAtRuntime = false;
+        [FormerlySerializedAs("variablePurpose")] [Multiline,Tooltip("Give a short description of what the card library represents.")]
+        public string libraryPurpose = string.Empty;
 #endif
         public string Name;
         [SerializeField]
