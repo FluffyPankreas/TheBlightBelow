@@ -21,7 +21,8 @@ namespace CCGKit
         public Material Material;
         public Sprite Picture;
         public CardType Type;
-        public CardTemplate Upgrade;
+        public CardTemplate ChaosUpgrade;
+        public CardTemplate OrderUpgrade;
         public List<Effect> Effects = new List<Effect>();
     }
 }

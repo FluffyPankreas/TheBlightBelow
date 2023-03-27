@@ -139,10 +139,19 @@ namespace CCGKit
 
                             GUILayout.BeginHorizontal();
                             {
-                                EditorGUILayout.LabelField(new GUIContent("Upgrade", "The card this one upgrades to."),
+                                EditorGUILayout.LabelField(new GUIContent("Chaos Upgrade", "The chaos upgrade for this card"),
                                     GUILayout.Width(EditorGUIUtility.labelWidth));
-                                currentCard.Upgrade = (CardTemplate)EditorGUILayout.ObjectField(
-                                    "", currentCard.Upgrade, typeof(CardTemplate), false, GUILayout.Width(200));
+                                currentCard.ChaosUpgrade = (CardTemplate)EditorGUILayout.ObjectField(
+                                    "", currentCard.ChaosUpgrade, typeof(CardTemplate), false, GUILayout.Width(200));
+                            }
+                            GUILayout.EndHorizontal();
+                            
+                            GUILayout.BeginHorizontal();
+                            {
+                                EditorGUILayout.LabelField(new GUIContent("Order Upgrade", "The order upgrade for this card."),
+                                    GUILayout.Width(EditorGUIUtility.labelWidth));
+                                currentCard.OrderUpgrade = (CardTemplate)EditorGUILayout.ObjectField(
+                                    "", currentCard.OrderUpgrade, typeof(CardTemplate), false, GUILayout.Width(200));
                             }
                             GUILayout.EndHorizontal();
                         }
