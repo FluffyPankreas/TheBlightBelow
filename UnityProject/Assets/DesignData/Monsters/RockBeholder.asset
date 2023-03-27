@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: RockBeholder
   m_EditorClassIdentifier: 
   Name: Rock Beholder
-  Prefab: {fileID: 5698836238204436691, guid: 90de250688651ab4782950bc9694dbd3, type: 3}
+  Prefab: {fileID: 1218596406362480266, guid: ccd50d376f9b8224fa5475bca2d3a112, type: 3}
   Actions: []
   HpLow: 28
   HpHigh: 33
