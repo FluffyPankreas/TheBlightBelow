@@ -216,6 +216,8 @@ namespace CCGKit
                     menu.AddItem(
                         new GUIContent("Deal damage"), false, CreateEffectCallback, typeof(DealDamageEffect));
                     menu.AddItem(
+                        new GUIContent("Deal damage range"), false, CreateEffectCallback, typeof(DealDamageRangeEffect));
+                    menu.AddItem(
                         new GUIContent("Gain mana"), false, CreateEffectCallback, typeof(GainManaEffect));
                     menu.AddItem(
                         new GUIContent("Gain HP"), false, CreateEffectCallback, typeof(GainHpEffect));
@@ -225,6 +227,7 @@ namespace CCGKit
                         new GUIContent("Apply buff"), false, CreateEffectCallback, typeof(ApplyStatusEffect));
                     menu.AddItem(
                         new GUIContent("Draw cards"), false, CreateEffectCallback, typeof(DrawCardsEffect));
+                    
                     menu.ShowAsContext();
                 },
                 x =>
