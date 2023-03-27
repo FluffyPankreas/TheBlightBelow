@@ -178,7 +178,6 @@ namespace CCGKit
 
                 if (PlayerPrefs.HasKey(saveDataPrefKey))
                 {
-                    Debug.Log("Loading a deck from player prefs.");
                     var json = PlayerPrefs.GetString(saveDataPrefKey);
                     var saveData = JsonUtility.FromJson<SaveData>(json);
                     hp.Value = saveData.Hp;
