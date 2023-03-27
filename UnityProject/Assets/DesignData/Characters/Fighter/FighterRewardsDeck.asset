@@ -12,15 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
   m_Name: FighterRewardsDeck
   m_EditorClassIdentifier: 
+  libraryPurpose: 
   Name: 
-  Entries:
-  - Card: {fileID: 11400000, guid: 592b31ad157a3914faff14c092f39463, type: 2}
-    NumCopies: 1
-  - Card: {fileID: 11400000, guid: eeda0ab5ae67fa24883e1c44dc2fe745, type: 2}
-    NumCopies: 1
-  - Card: {fileID: 11400000, guid: 9cc1877be43e2454089cf7a93071a599, type: 2}
-    NumCopies: 1
-  - Card: {fileID: 11400000, guid: df49f2fcd33f9e3418e63d9a769ae2d2, type: 2}
-    NumCopies: 1
-  - Card: {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
-    NumCopies: 1
+  _cards:
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: be9a54fd111d58548a5a18f6e3aa59d5, type: 2}
+  - {fileID: 11400000, guid: 2167d5b8678846842ac7c1b8ee1a35ec, type: 2}
