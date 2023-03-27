@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
   m_Name: FighterStartDeck
   m_EditorClassIdentifier: 
+  libraryPurpose: This is the starter deck for the Fighter character.
   Name: Deck
-  Entries:
-  - Card: {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
-    NumCopies: 5
-  - Card: {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
-    NumCopies: 3
-  - Card: {fileID: 11400000, guid: 1e4165d473cda9d48a85cb2897cbc6c8, type: 2}
-    NumCopies: 1
-  - Card: {fileID: 11400000, guid: be9a54fd111d58548a5a18f6e3aa59d5, type: 2}
-    NumCopies: 1
+  _cards:
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
+  - {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
+  - {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
+  - {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
+  - {fileID: 11400000, guid: 9cc1877be43e2454089cf7a93071a599, type: 2}
