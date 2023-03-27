@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 160629517315075057}
   - component: {fileID: 2453670071033191869}
   - component: {fileID: -1764989419823272253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MonsterRockBeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
