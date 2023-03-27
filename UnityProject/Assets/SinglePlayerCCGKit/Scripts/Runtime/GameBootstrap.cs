@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System.Collections.Generic;
+using GameArchitecture;
 using GameSystems;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -83,11 +84,14 @@ namespace CCGKit
         [Header("Pools")]
         [SerializeField]
         private ObjectPool cardPool;
+
+        [Header("Decks")] [SerializeField, Tooltip("The runtime variable card library that is being used for the run,")]
+        private CardTemplateLibrary runDeck;
 #pragma warning restore 649
 
         private Camera mainCamera;
 
-        private List<CardTemplate> playerDeck = new List<CardTemplate>();
+        //private List<CardTemplate> playerDeck = new List<CardTemplate>();
 
         private GameObject player;
         private List<GameObject> enemies = new List<GameObject>();
@@ -174,12 +178,13 @@ namespace CCGKit
 
                 if (PlayerPrefs.HasKey(saveDataPrefKey))
                 {
+                    Debug.Log("Loading a deck from player prefs.");
                     var json = PlayerPrefs.GetString(saveDataPrefKey);
                     var saveData = JsonUtility.FromJson<SaveData>(json);
                     hp.Value = saveData.Hp;
                     shield.Value = saveData.Shield;
 
-                    playerDeck.Clear();
+                    runDeck.Cards.Clear();
                     foreach (var id in saveData.Deck)
                     {
 
@@ -190,15 +195,16 @@ namespace CCGKit
                         }
                         if (card != null)
                         {
-                            playerDeck.Add(card);
+                            runDeck.Add(card);
                         }
                     }
                 }
                 else
                 {
+                    Debug.Log("Creating a deck from scratch.");
                     foreach (var cardTemplate in characterTemplate.StartingDeck.Cards)
                     {
-                        playerDeck.Add(cardTemplate);
+                        runDeck.Add(cardTemplate);
                     }
                 }
 
@@ -208,7 +214,7 @@ namespace CCGKit
                     gameInfo.SaveData.Hp = hp.Value;
                     gameInfo.SaveData.Shield = shield.Value;
                     gameInfo.SaveData.Deck.Clear();
-                    foreach (var card in playerDeck)
+                    foreach (var card in runDeck.Cards)
                     {
                         gameInfo.SaveData.Deck.Add(card.Id);
                     }
