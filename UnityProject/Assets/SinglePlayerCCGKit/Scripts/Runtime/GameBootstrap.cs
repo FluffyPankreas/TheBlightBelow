@@ -201,6 +201,7 @@ namespace CCGKit
                 else
                 {
                     Debug.Log("Creating a deck from scratch.");
+                    runDeck.Cards.Clear();
                     foreach (var cardTemplate in characterTemplate.StartingDeck.Cards)
                     {
                         runDeck.Add(cardTemplate);

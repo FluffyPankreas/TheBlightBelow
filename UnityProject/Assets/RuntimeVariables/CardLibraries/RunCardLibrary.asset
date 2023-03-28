@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
   m_Name: RunCardLibrary
   m_EditorClassIdentifier: 
-  variablePurpose: "Thes card libarry represents the deck\nbeing used during a run.
+  libraryPurpose: "Thes card libarry represents the deck\nbeing used during a run.
     This deck can \nchange during a run. "
-  meantToBeUsedAtRuntime: 1
   Name: RunDeck
   _cards:
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
   - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}

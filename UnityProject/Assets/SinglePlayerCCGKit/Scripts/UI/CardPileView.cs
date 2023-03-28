@@ -4,7 +4,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Temp;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CCGKit
 {
@@ -24,14 +26,30 @@ namespace CCGKit
             {
                 var widget = Instantiate(CardPrefab, Content.transform, false);
                 widget.GetComponent<CardWidget>().SetInfo(card);
+               
                 widgets.Add(widget);
             }
         }
 
+        public void HackyAddCards(List<RuntimeCard> cards, UpgradeCanvas caller, string upgradeType)
+        {
+            var sortedCards = cards.OrderBy(x => x.Template.Name).ToList();
+            foreach (var card in sortedCards)
+            {
+                var widget = Instantiate(CardPrefab, Content.transform, false);
+                widget.GetComponent<CardWidget>().SetInfo(card);
+                widget.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    caller.UpgradeCard(widget.GetComponent<CardWidget>().Card,upgradeType);
+                    transform.parent.gameObject.SetActive(false);
+                });  
+                widgets.Add(widget);
+            }
+             
+        }
+
         private void OnEnable()
         {
-            
-
             HandPresentationSystem.SetHandCardsInteractable(false);
         }
 
