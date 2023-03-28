@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4065f389b584708aa1b58cf25db28b, type: 3}
   m_Name: DisciplinedAttack[013]
   m_EditorClassIdentifier: 
-  Id: 12
+  Id: 13
   Name: Disciplined Attack
   Cost: 1
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
