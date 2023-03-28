@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
+  m_Name: FullLibrary
+  m_EditorClassIdentifier: 
+  libraryPurpose: 'This is a hack to sort out how decks are loaded for now.
+
+    It
+    just contains all the cards possible.'
+  Name: Full Library
+  _cards:
+  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  - {fileID: 11400000, guid: 9cc1877be43e2454089cf7a93071a599, type: 2}
+  - {fileID: 11400000, guid: d1a78e68c3ed1ef49bb75dfd576c7f47, type: 2}
+  - {fileID: 11400000, guid: 4ad9ab9ca3efb864fa120a415704ee57, type: 2}
+  - {fileID: 11400000, guid: 2167d5b8678846842ac7c1b8ee1a35ec, type: 2}
+  - {fileID: 11400000, guid: 1e4165d473cda9d48a85cb2897cbc6c8, type: 2}
+  - {fileID: 11400000, guid: 3843e19dbd03b8f4d9366dacb09da592, type: 2}
+  - {fileID: 11400000, guid: 592b31ad157a3914faff14c092f39463, type: 2}
+  - {fileID: 11400000, guid: fe4baa5f06d36d643ace3e8f209c950e, type: 2}
+  - {fileID: 11400000, guid: be9a54fd111d58548a5a18f6e3aa59d5, type: 2}
+  - {fileID: 11400000, guid: eeda0ab5ae67fa24883e1c44dc2fe745, type: 2}
+  - {fileID: 11400000, guid: aecb5ecfab0e31348ae206b8b6130f4f, type: 2}
+  - {fileID: 11400000, guid: df49f2fcd33f9e3418e63d9a769ae2d2, type: 2}
+  - {fileID: 11400000, guid: 9d63c86faa944cb41b7e310eda835c68, type: 2}

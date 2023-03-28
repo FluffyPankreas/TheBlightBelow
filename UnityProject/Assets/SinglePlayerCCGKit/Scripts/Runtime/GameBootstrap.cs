@@ -85,8 +85,13 @@ namespace CCGKit
         [SerializeField]
         private ObjectPool cardPool;
 
-        [Header("Decks")] [SerializeField, Tooltip("The runtime variable card library that is being used for the run,")]
+        [Header("Decks")] 
+        [SerializeField, Tooltip("The runtime variable card library that is being used for the run,")]
         private CardTemplateLibrary runDeck;
+
+        [SerializeField, Tooltip("The full library that the character can earn.")]
+        private CardTemplateLibrary fullDeck;
+        
 #pragma warning restore 649
 
         private Camera mainCamera;
@@ -187,7 +192,7 @@ namespace CCGKit
                     foreach (var id in saveData.Deck)
                     {
 
-                        var card = characterTemplate.StartingDeck.Cards.Find(c => c.Id == id);
+                        var card = fullDeck.Cards.Find(c => c.Id == id);
                         if (card == null)
                         {
                             card = characterTemplate.RewardDeck.Cards.Find(c => c.Id == id);
