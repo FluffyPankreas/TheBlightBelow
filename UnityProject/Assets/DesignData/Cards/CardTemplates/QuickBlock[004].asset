@@ -47,9 +47,11 @@ MonoBehaviour:
   Id: 4
   Name: Quick Block
   Cost: 0
+  RulesText: 
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   Picture: {fileID: 21300000, guid: 564a2301a4ff72e4a8eb75a8b2048126, type: 3}
   Type: {fileID: 11400000, guid: a9ea2ae22734eea43913d97ecccd577b, type: 2}
-  Upgrade: {fileID: 0}
+  ChaosUpgrade: {fileID: 0}
+  OrderUpgrade: {fileID: 0}
   Effects:
   - {fileID: -7407237684061601805}
