@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using GameArchitecture;
 
 namespace CCGKit
 {
@@ -22,6 +23,7 @@ namespace CCGKit
         public Material Material;
         public Sprite Picture;
         public CardType Type;
+        public CardClass Class;
         public CardTemplate ChaosUpgrade;
         public CardTemplate OrderUpgrade;
         public List<Effect> Effects = new List<Effect>();
