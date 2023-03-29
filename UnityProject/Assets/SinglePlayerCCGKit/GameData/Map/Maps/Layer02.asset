@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   DistanceFromPreviousLayer:
-    Min: 1
-    Max: 4
+    Min: 3
+    Max: 3
   DistanceBetweenNodes: 2
-  RandomizePosition: 0.72
-  EnemyNodeChance: 0.35
+  RandomizePosition: 0
+  EnemyNodeChance: 0.6
   EliteNodeChance: 0
-  RestNodeChance: 0.35
-  TreasureNodeChance: 0.1
-  MerchantNodeChance: 0.1
-  UnknownNodeChance: 0
+  RestNodeChance: 0
+  TreasureNodeChance: 0
+  MerchantNodeChance: 0
+  UnknownNodeChance: 0.4
   BossNodeChance: 0
