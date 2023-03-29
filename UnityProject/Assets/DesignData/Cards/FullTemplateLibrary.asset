@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
-  m_Name: FullLibrary
+  m_Name: FullTemplateLibrary
   m_EditorClassIdentifier: 
-  libraryPurpose: 'This is a hack to sort out how decks are loaded for now.
+  libraryPurpose: 'This deck is all the card design data.
 
-    It
-    just contains all the cards possible.'
-  Name: Full Library
+    It''s used to load
+    the player prefs based
+
+    on card ID.'
+  Name: Full Template Library
   _cards:
   - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
   - {fileID: 11400000, guid: 9cc1877be43e2454089cf7a93071a599, type: 2}
