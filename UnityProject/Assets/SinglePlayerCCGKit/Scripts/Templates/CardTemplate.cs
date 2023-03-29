@@ -18,6 +18,7 @@ namespace CCGKit
         public int Id;
         public string Name;
         public int Cost;
+        public string RulesText;
         public Material Material;
         public Sprite Picture;
         public CardType Type;

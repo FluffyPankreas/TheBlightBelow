@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+
 namespace CCGKit
 {
     /// <summary>
@@ -86,17 +87,24 @@ namespace CCGKit
 
         public void SetInfo(RuntimeCard card)
         {
+            
             RuntimeCard = card;
             Template = card.Template;
             costText.text = Template.Cost.ToString();
             nameText.text = Template.Name;
-            typeText.text = "Spell";
-            var builder = new StringBuilder();
-            foreach (var effect in Template.Effects)
+            typeText.text = "Spell";//TODO: Load the actual card type here. 
+
+            descriptionText.text = Template.RulesText;
+            if (descriptionText.text.Equals(""))
             {
-                builder.AppendFormat("{0}. ", effect.GetName());
+                var builder = new StringBuilder();
+                foreach (var effect in Template.Effects)
+                {
+                    builder.AppendFormat("{0}. ", effect.GetName());
+                }
+                descriptionText.text = builder.ToString();    
             }
-            descriptionText.text = builder.ToString();
+            
             picture.material = Template.Material;
             picture.sprite = Template.Picture;
         }
