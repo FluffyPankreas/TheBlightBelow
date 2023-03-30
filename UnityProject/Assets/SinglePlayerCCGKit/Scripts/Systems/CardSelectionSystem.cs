@@ -2,6 +2,7 @@
 // This code can only be used under the standard Unity Asset Store End User License Agreement,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
+using CardEffects;
 using UnityEngine;
 
 namespace CCGKit
@@ -43,7 +44,22 @@ namespace CCGKit
             HandPresentationSystem.RemoveCardFromHand(SelectedCard);
             HandPresentationSystem.MoveCardToDiscardPile(SelectedCard);
 
-            DeckDrawingSystem.MoveCardToDiscardPile(cardObject.RuntimeCard);
+            var exhaustCard = false;
+            foreach (var effect in cardObject.RuntimeCard.Template.Effects)
+            {
+                var castedEffect = effect as ExhaustCardEffect;
+                if (castedEffect != null)
+                    exhaustCard = true;
+            }
+
+            if (exhaustCard)
+            {
+                DeckDrawingSystem.MoveCardToExhaustDeck(cardObject.RuntimeCard);
+            }
+            else
+            {
+                DeckDrawingSystem.MoveCardToDiscardPile(cardObject.RuntimeCard);    
+            }
         }
 
         public bool HasSelectedCard()

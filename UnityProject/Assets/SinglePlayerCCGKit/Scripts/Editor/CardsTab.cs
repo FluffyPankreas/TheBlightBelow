@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
+using CardEffects;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -227,6 +228,8 @@ namespace CCGKit
                         new GUIContent("Apply buff"), false, CreateEffectCallback, typeof(ApplyStatusEffect));
                     menu.AddItem(
                         new GUIContent("Draw cards"), false, CreateEffectCallback, typeof(DrawCardsEffect));
+                    menu.AddItem(
+                        new GUIContent("Exhaust cards"), false, CreateEffectCallback, typeof(ExhaustCardEffect));
                     
                     menu.ShowAsContext();
                 },
