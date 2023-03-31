@@ -241,7 +241,7 @@ namespace CCGKit
                 };
                 obj.Character.Status.Value.Clear();
 
-                playerConfig.DrawCount.Value = characterTemplate.DrawCount;
+                playerConfig.DrawCount.Value = characterTemplate.BaseDrawAmount;
                 
                 numAssetsLoaded++;
                 InitializeGame();

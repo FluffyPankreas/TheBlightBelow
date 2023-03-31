@@ -18,7 +18,7 @@ namespace CCGKit
     {
         [FormerlySerializedAs("Hp")] public int MaximumHp;
         public int Mana;
-        public int DrawCount;
+        [FormerlySerializedAs("DrawCount")] public int BaseDrawAmount;
         public CardTemplateLibrary StartingDeck;
         public CardTemplateLibrary RewardDeck;
     }
