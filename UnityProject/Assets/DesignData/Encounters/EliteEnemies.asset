@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Encounters:
   - Name: Green Dragon + Demon
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 50
+    GoldRewardHigh: 75
     Enemies:
     - m_AssetGUID: b233966173a5041a797da2fc498c54d0
       m_SubObjectName: 
@@ -25,7 +28,10 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - Name: Demon Spawn x2
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 50
+    GoldRewardHigh: 75
     Enemies:
     - m_AssetGUID: 9659c406322ca4ecf8ca45c5f331f95f
       m_SubObjectName: 

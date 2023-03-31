@@ -12,6 +12,7 @@ namespace CCGKit
     {
         public int Hp;
         public int Shield;
+        public int Gold;
         public List<int> Deck = new List<int>();
     }
 }

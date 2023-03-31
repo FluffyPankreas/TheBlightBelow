@@ -19,7 +19,7 @@ namespace CCGKit
         public IntVariable DrawCount;
 
         public StatusVariable Status;
-
+        
         public GameObject HpWidget;
         public GameObject StatusWidget;
     }

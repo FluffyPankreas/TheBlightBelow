@@ -15,6 +15,8 @@ namespace CCGKit
         public string Name;
         public NodeType EncounterType;
         public Sprite Background;
+        public int GoldRewardLow;
+        public int GoldRewardHigh;
         public List<AssetReference> Enemies = new List<AssetReference>();
     }
 }
