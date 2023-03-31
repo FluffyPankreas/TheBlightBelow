@@ -14,21 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Encounters:
   - Name: Flesh Beholder
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 20
+    GoldRewardHigh: 30
     Enemies:
     - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - Name: Rock Beholder
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 20
+    GoldRewardHigh: 30
     Enemies:
     - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - Name: Flesh Beholder x2
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 20
+    GoldRewardHigh: 30
     Enemies:
     - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
       m_SubObjectName: 
@@ -39,7 +48,10 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - Name: Rock Beholder x2
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 20
+    GoldRewardHigh: 30
     Enemies:
     - m_AssetGUID: a96bde042c8f5fa4aa90063d107e5351
       m_SubObjectName: 
@@ -50,7 +62,10 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - Name: Flesh Beholder + Magma Beholder
+    EncounterType: 0
     Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 20
+    GoldRewardHigh: 30
     Enemies:
     - m_AssetGUID: e0f28064a3bdb40c5bda164a623dd985
       m_SubObjectName: 
