@@ -371,6 +371,7 @@ MonoBehaviour:
   runDeck: {fileID: 11400000, guid: 58d232b2b39586c438c2e5d3a92d24ff, type: 2}
   drawDeck: {fileID: 11400000, guid: 4f6db6460061eb344ab0cf94b5dd10e1, type: 2}
   discardDeck: {fileID: 11400000, guid: 2b66b053b985d0943825aef545c5f3d3, type: 2}
+  exhaustDeck: {fileID: 11400000, guid: a8eac71caa371114da1eb0d32982a218, type: 2}
 --- !u!114 &63919147
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,9 @@ namespace CCGKit
         
         [SerializeField,Tooltip("The runtime variable for the discard deck,")]
         private CardTemplateLibrary discardDeck;
+
+        [SerializeField, Tooltip("The runtime variable for the exhaust deck.")]
+        private CardTemplateLibrary exhaustDeck;
         
         private List<RuntimeCard> hand;
 
@@ -131,6 +134,14 @@ namespace CCGKit
                 }
                 DrawCardsFromDeck(amount);
             }
+        }
+
+        public void MoveCardToExhaustDeck(RuntimeCard card)
+        {
+            Debug.Log("Moving card to exhaustDeck.");
+            var idx = hand.IndexOf(card);
+            hand.RemoveAt(idx);
+            exhaustDeck.Add(card.Template);
         }
 
         public void MoveCardToDiscardPile(RuntimeCard card)
