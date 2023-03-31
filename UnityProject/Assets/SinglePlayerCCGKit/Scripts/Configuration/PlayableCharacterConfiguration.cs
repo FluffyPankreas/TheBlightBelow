@@ -18,8 +18,6 @@ namespace CCGKit
         public IntVariable Mana;
         public IntVariable DrawCount;
 
-        public IntVariable Gold; 
-            
         public StatusVariable Status;
         
         public GameObject HpWidget;

@@ -629,6 +629,7 @@ MonoBehaviour:
   cardPool: {fileID: 1206160566}
   runDeck: {fileID: 11400000, guid: 58d232b2b39586c438c2e5d3a92d24ff, type: 2}
   fullDeck: {fileID: 11400000, guid: 8cc13a62cd2785146a6a2edf81340011, type: 2}
+  gold: {fileID: 11400000, guid: 4ac4f6d5d31017a4baab3a6d344cbbd9, type: 2}
 --- !u!4 &157347090
 Transform:
   m_ObjectHideFlags: 0
@@ -2218,6 +2219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1701017332}
   View: {fileID: 390655202}
+  PlayerGold: {fileID: 11400000, guid: 4ac4f6d5d31017a4baab3a6d344cbbd9, type: 2}
   rewardCardsTemplate: {fileID: 11400000, guid: 9e8c045d84afd244f8b9f5980a671d0e, type: 2}
 --- !u!1 &729362284
 GameObject:
@@ -3538,6 +3540,7 @@ GameObject:
   - component: {fileID: 1040360835}
   - component: {fileID: 1040360834}
   - component: {fileID: 1040360833}
+  - component: {fileID: 1040360836}
   m_Layer: 0
   m_Name: SavePlayerDataSystem
   m_TagString: Untagged
@@ -3628,6 +3631,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f20eb9334440f4b8c260c6fa96c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1040360836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040360831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa96c0a04a084326ab0d2bf4e6a37c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3dd03dbb17d345d49ad8caa59cd9fc24, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1040360835}
+        m_TargetAssemblyTypeName: CCGKit.SavePlayerDataSystem, Assembly-CSharp
+        m_MethodName: OnPlayerGoldChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1088284076
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ namespace CCGKit
     {
         public Canvas Canvas;
         public CardRewardView View;
+        public IntVariable PlayerGold;
 
         [FormerlySerializedAs("RewardCards")] public CardTemplateLibrary rewardCardsTemplate;
 
@@ -19,6 +20,11 @@ namespace CCGKit
         {
             Canvas.gameObject.SetActive(true);
             View.AddCards(rewardCardsTemplate);
+
+            var encounter = FindObjectOfType<GameInfo>()?.Encounter;
+            var goldReward = Random.Range(encounter.GoldRewardLow, encounter.GoldRewardHigh);
+            PlayerGold.Value += goldReward;
+
         }
     }
 }

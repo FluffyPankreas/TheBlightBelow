@@ -2,6 +2,8 @@
 // This code can only be used under the standard Unity Asset Store End User License Agreement,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
+using UnityEngine;
+
 namespace CCGKit
 {
     /// <summary>
@@ -20,6 +22,13 @@ namespace CCGKit
         {
             var gameInfo = FindObjectOfType<GameInfo>();
             gameInfo.SaveData.Shield = shield;
+        }
+
+        public void OnPlayerGoldChanged(int gold)
+        {
+            Debug.Log("Changing gold value to " + gold);
+            var gameInfo = FindObjectOfType<GameInfo>();
+            gameInfo.SaveData.Gold = gold;
         }
     }
 }

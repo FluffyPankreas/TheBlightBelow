@@ -8,7 +8,7 @@ using GameSystems;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
-
+using UnityEngine.WSA;
 using Random = UnityEngine.Random;
 
 namespace CCGKit
@@ -91,6 +91,10 @@ namespace CCGKit
 
         [SerializeField, Tooltip("The full library that the character can earn.")]
         private CardTemplateLibrary fullDeck;
+
+        [Header("Player config variables")] 
+        [SerializeField, Tooltip("Runtime variable that tracks the player's gold.")]
+        private IntVariable gold;
         
 #pragma warning restore 649
 
@@ -167,6 +171,7 @@ namespace CCGKit
             {
                 var characterTemplate = op.Result;
                 player = Instantiate(characterTemplate.Prefab, playerPivot);
+                
                 Assert.IsNotNull(player);
 
                 var hp = playerConfig.Hp;
@@ -178,7 +183,6 @@ namespace CCGKit
                 mana.Value = characterTemplate.Mana;
                 shield.Value = 0;
                 
-
                 manaResetSystem.SetDefaultMana(characterTemplate.Mana);
 
                 if (PlayerPrefs.HasKey(saveDataPrefKey))
@@ -187,7 +191,9 @@ namespace CCGKit
                     var saveData = JsonUtility.FromJson<SaveData>(json);
                     hp.Value = saveData.Hp;
                     shield.Value = saveData.Shield;
-
+                    gold.Value = saveData.Gold;
+                    
+                
                     runDeck.Cards.Clear();
                     foreach (var id in saveData.Deck)
                     {
@@ -205,6 +211,7 @@ namespace CCGKit
                 }
                 else
                 {
+                    gold.Value = characterTemplate.StartingGoldAmount;
                     runDeck.Cards.Clear();
                     foreach (var cardTemplate in characterTemplate.StartingDeck.Cards)
                     {
@@ -242,7 +249,7 @@ namespace CCGKit
                 obj.Character.Status.Value.Clear();
 
                 playerConfig.DrawCount.Value = characterTemplate.BaseDrawAmount;
-                playerConfig.Gold.Value = characterTemplate.StartingGoldAmount;
+                
                 
                 numAssetsLoaded++;
                 InitializeGame();
