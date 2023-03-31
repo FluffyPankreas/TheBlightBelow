@@ -21,5 +21,6 @@ namespace CCGKit
         [FormerlySerializedAs("DrawCount")] public int BaseDrawAmount;
         public CardTemplateLibrary StartingDeck;
         public CardTemplateLibrary RewardDeck;
+        public int StartingGoldAmount;
     }
 }

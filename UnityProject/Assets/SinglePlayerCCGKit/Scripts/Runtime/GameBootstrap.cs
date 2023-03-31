@@ -242,6 +242,7 @@ namespace CCGKit
                 obj.Character.Status.Value.Clear();
 
                 playerConfig.DrawCount.Value = characterTemplate.BaseDrawAmount;
+                playerConfig.Gold.Value = characterTemplate.StartingGoldAmount;
                 
                 numAssetsLoaded++;
                 InitializeGame();
