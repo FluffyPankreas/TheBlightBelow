@@ -21,10 +21,6 @@ namespace GameArchitecture
         [SerializeField]
         private List<CardTemplate> _cards = new List<CardTemplate>();
         
-        //TODO: Add card added event?
-        //TODO: Add deck empty event?
-        //TODO: Add card drawn event?
-
         public int Count => _cards.Count;
 
         public List<CardTemplate> Cards
