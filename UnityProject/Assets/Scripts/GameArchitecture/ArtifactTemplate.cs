@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using ArtifactEffects;
 
 namespace GameArchitecture
 {
+    [Serializable]
     [CreateAssetMenu(
         menuName = "Game Architecture/Artifact Template",
         fileName = "ArtifactTemplate")]
@@ -13,8 +16,23 @@ namespace GameArchitecture
         
         [SerializeField,Tooltip("The icon that will show up in the UI.")]
         private Sprite artifactIcon;
-        
+
+        [SerializeField,Tooltip("The list of effects that the artifact possesses.")]
+        private List<Effect> artifactEffects = new List<Effect>();
+
+        /// <summary>
+        /// The name of the artifact.
+        /// </summary>
         public string ArtifactName => artifactName;
-         public Sprite ArtifactIcon => artifactIcon;
+        
+        /// <summary>
+        /// The icon of the artifact for UI purposes.
+        /// </summary>
+        public Sprite ArtifactIcon => artifactIcon;
+        
+        /// <summary>
+        /// The effects that the artifact will apply to the game.
+        /// </summary>
+        public List<Effect> ArtifactEffects => artifactEffects;
     }
 }
