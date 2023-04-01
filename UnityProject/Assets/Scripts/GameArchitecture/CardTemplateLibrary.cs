@@ -9,8 +9,7 @@ namespace GameArchitecture
     [Serializable]
     [CreateAssetMenu(
         menuName = "Game Architecture/Card library",
-        fileName = "CardTemplateLibrary",
-        order = 3)]
+        fileName = "CardTemplateLibrary")]
     public class CardTemplateLibrary : ScriptableObject
     {
 #if UNITY_EDITOR
