@@ -1,21 +1,18 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ArtifactEffects
 {
-    public class CharacterAttributeModifier : ArtifactEffect
+    public class CharacterAttributeModifier : Effect
     {
         [SerializeField, Tooltip("The value for the effect.")]
         private int _value;
         
         public int Value => _value;
 
-        
-      //something like happens once or everytime?
-      //queue to process the effect?
-      //overaidble modifier effect.
-      public override void Effect()
+      public override void Resolve()
       {
-          throw new System.NotImplementedException();
+          Debug.Log("Attempting to resolve CharacterAttributeModifier");
       }
     }
 }

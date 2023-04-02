@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ArtifactEffects
 {
@@ -12,10 +11,9 @@ namespace ArtifactEffects
     {
         [SerializeField] public string Name;
         [SerializeField] public int Number;
+
         public virtual void Resolve()
         {
-            // This would be better as an abstract class but serialization is forcing this.
-            Debug.LogError("This method should be overridden, something hasn't done that.");
         }
     }
 }
