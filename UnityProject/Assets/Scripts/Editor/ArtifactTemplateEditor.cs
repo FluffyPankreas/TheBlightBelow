@@ -30,14 +30,14 @@ namespace Editor
                 true,
                 true,
                 true
-            );
-            
-            _artifactEffects.drawHeaderCallback = (Rect rect) => { EditorGUI.LabelField(rect, "Artifact Effects"); };
+            )
+            {
+                drawHeaderCallback = rect => { EditorGUI.LabelField(rect, "Artifact Effects"); }
+            };
 
             SetArtifactEffectListDropDownCallback();
             SetArtifactEffectRemoveCallback();
             SetArtifactEffectListDrawElementCallback();
-            
         }
 
         
@@ -65,13 +65,13 @@ namespace Editor
 
                 var allEffectTypes = GetInheritedClasses(typeof(Effect));
 
-                foreach (var subType in allEffectTypes)
+                foreach (var effectType in allEffectTypes)
                 {
                     menu.AddItem(
-                        new GUIContent(TypeName(subType)),
+                        new GUIContent(TypeName(effectType)),
                         false,
-                        CreateEffectCallback<DrawAtStartTestEffect>,
-                        subType
+                        CreateEffectCallback,
+                        effectType
                     );
                 }
                 menu.ShowAsContext();
@@ -85,7 +85,6 @@ namespace Editor
         {
             _artifactEffects.onRemoveCallback = (effects) =>
             {
-                Debug.Log("Removing an item.");
                 if (EditorUtility.DisplayDialog(
                         "Warning!",
                         "Are you sure you want to delete this effect?",
@@ -93,7 +92,17 @@ namespace Editor
                         "No")
                    )
                 {
-                    ReorderableList.defaultBehaviours.DoRemoveButton(effects);
+                    //ReorderableList.defaultBehaviours.DoRemoveButton(effects);
+                    // Get the index of the selected element
+                    int index = effects.index;
+
+                    // Remove the element from the list
+                    //effects.serializedProperty.GetArrayElementAtIndex(index);
+                    var so = effects.serializedProperty.GetArrayElementAtIndex(index);
+                    AssetDatabase.RemoveObjectFromAsset(so.objectReferenceValue);
+                    AssetDatabase.SaveAssets();
+                    effects.serializedProperty.DeleteArrayElementAtIndex(index);
+                    effects.serializedProperty.serializedObject.ApplyModifiedProperties();
                 }
             };
         }
@@ -103,24 +112,19 @@ namespace Editor
         /// </summary>
         private void SetArtifactEffectListDrawElementCallback()
         {
-            /*_artifactEffects.drawElementCallback =
-                (Rect rect, int index, bool isActive, bool isFocused) =>
-                {
-                    var element = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
-                    
-                    rect.y += 2;
-                };*/
         }
 
-        private void CreateEffectCallback<T>(object selectedEffect) where T : Effect
+        private void CreateEffectCallback(object effectType)
         {
             var effects = (serializedObject.targetObjects[0] as ArtifactTemplate)?.ArtifactEffects;
 
-            var newEffectToAdd = ScriptableObject.CreateInstance((Type)selectedEffect);// Create a new instance of the effect. 
+            var newEffectToAdd = ScriptableObject.CreateInstance((Type)effectType);// Create a new instance of the effect.
+            newEffectToAdd.name = ((Type)effectType).Name;
             AssetDatabase.AddObjectToAsset(newEffectToAdd, serializedObject.targetObjects[0]);
+            AssetDatabase.SaveAssets();
             
             Debug.Log("Created Type: " + newEffectToAdd.GetType());
-            effects.Add((Effect)newEffectToAdd);
+            effects!.Add((Effect)newEffectToAdd);
             
             serializedObject.ApplyModifiedProperties();
         }
