@@ -31,18 +31,13 @@ namespace Editor
                 true,
                 true
             );
+            
+            _artifactEffects.drawHeaderCallback = (Rect rect) => { EditorGUI.LabelField(rect, "Artifact Effects"); };
 
-            for (int i = 0; i < serializedObject.targetObjects.Length; i++)
-            {
-                Debug.Log("targetObjects[" + i + "]" + ": " + serializedObject.targetObjects[i]);
-                
-            }
-
-            SetDrawHeaderCallback();
-            SetDrawElementCallback();
-
-            //SetOnAddCallback();
-            SetOnDropDownCallback();
+            SetArtifactEffectListDropDownCallback();
+            SetArtifactEffectRemoveCallback();
+            SetArtifactEffectListDrawElementCallback();
+            
         }
 
         
@@ -53,92 +48,16 @@ namespace Editor
             EditorGUILayout.PropertyField(_artifactName);
             EditorGUILayout.PropertyField(_artifactIcon);
             
+            
             _artifactEffects.DoLayoutList();
 
             serializedObject.ApplyModifiedProperties();
         }
-
-        private void SetDrawHeaderCallback()
-        {
-            _artifactEffects.drawHeaderCallback = (Rect rect) => { EditorGUI.LabelField(rect, "Artifact Effects"); };
-        }
-
-        private void SetDrawElementCallback()
-        {
-            int minNameWidth = 50;
-            int numberWidth = 30;
-            int verticalPadding = 1;
-            int horizontalPadding = 5;
-
-            var nameWidth = minNameWidth;
-
-            _artifactEffects.drawElementCallback =
-                (Rect rect, int index, bool isActive, bool isFocused) =>
-                {
-                    if (rect.width - numberWidth > minNameWidth)
-                        nameWidth = (int)(rect.width - numberWidth);
-
-                    var element = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
-                    
-                    rect.y += 2;
-        
-        
-                    UnityEditor.Editor editor;
- 
-                    CreateCachedEditor(element.objectReferenceValue, typeof(CharacterAttributeModiferEditor), ref editor);  
- 
-                    if (editor != null) {
-                        rect.y += EditorGUIUtility.singleLineHeight + 2;
- 
-                        GUILayout.BeginArea(rect);
-                        editor.OnInspectorGUI();
-                        GUILayout.EndArea();
-                    }
-
-                    
-                };
-        }
-
-        private void SetOnAddCallback()
-        {
-            _artifactEffects.onAddCallback = (rl) =>
-            {
-                var newItem = ScriptableObject.CreateInstance<DamageTestEffect>();
-                
-                Debug.Log("ScriptableObject: " + newItem);
-                newItem.LowDiceValue = 1;
-                newItem.HighDiceValue = 6;
-                newItem.DiceCount = 2;
-                
-                serializedObject.FindProperty("artifactEffects").arraySize++;
-                var newItemIndex = serializedObject.FindProperty("artifactEffects").arraySize - 1;
-                serializedObject.FindProperty("artifactEffects").GetArrayElementAtIndex(newItemIndex).objectReferenceValue = newItem;
-                serializedObject.ApplyModifiedProperties();
-                
-                var property = serializedObject.FindProperty("artifactEffects").GetArrayElementAtIndex(newItemIndex);
-                Debug.Log("Property: " + property.objectReferenceValue);
-                
-                serializedObject.ApplyModifiedProperties();
-            };
-        }
-        private void SetOnRemoveCallback()
-        {
-            _artifactEffects.onRemoveCallback = (effects) =>
-            {
-                Debug.Log("Removing an item.");
-                if (EditorUtility.DisplayDialog(
-                        "Warning!",
-                        "Are you sure you want to delete the wave?",
-                        "Yes",
-                        "No")
-                   )
-                {
-                    ReorderableList.defaultBehaviours.DoRemoveButton(effects);
-                }
-            };
-        }
-
-        private void SetOnDropDownCallback()
+    
+        /// <summary>
+        /// Adds the functionality that allows the artifact effect list dropdown to add new effects.
+        /// </summary>
+        private void SetArtifactEffectListDropDownCallback()
         {
             _artifactEffects.onAddDropdownCallback = (rect, list) =>
             {
@@ -157,6 +76,40 @@ namespace Editor
                 }
                 menu.ShowAsContext();
             };
+        }
+        
+        /// <summary>
+        /// Adds the functionality that cleans up the effects properly when delete is selected.
+        /// </summary>
+        private void SetArtifactEffectRemoveCallback()
+        {
+            _artifactEffects.onRemoveCallback = (effects) =>
+            {
+                Debug.Log("Removing an item.");
+                if (EditorUtility.DisplayDialog(
+                        "Warning!",
+                        "Are you sure you want to delete this effect?",
+                        "Yes",
+                        "No")
+                   )
+                {
+                    ReorderableList.defaultBehaviours.DoRemoveButton(effects);
+                }
+            };
+        }
+        
+        /// <summary>
+        /// Adds the functionality to draw each effect in the artifact list. 
+        /// </summary>
+        private void SetArtifactEffectListDrawElementCallback()
+        {
+            /*_artifactEffects.drawElementCallback =
+                (Rect rect, int index, bool isActive, bool isFocused) =>
+                {
+                    var element = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
+                    
+                    rect.y += 2;
+                };*/
         }
 
         private void CreateEffectCallback<T>(object selectedEffect) where T : Effect
