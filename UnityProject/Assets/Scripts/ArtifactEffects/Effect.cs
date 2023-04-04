@@ -7,13 +7,11 @@ namespace ArtifactEffects
     /// The base effect that all artifact effects should inherit from.
     /// </summary>
     [Serializable]
-    public class Effect
+    public abstract class Effect : ScriptableObject
     {
         [SerializeField] public string Name;
         [SerializeField] public int Number;
 
-        public virtual void Resolve()
-        {
-        }
+        public abstract void Resolve();
     }
 }

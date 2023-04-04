@@ -9,8 +9,6 @@ using UnityEditorInternal;
 using GameArchitecture;
 using ArtifactEffects;
 
-
-
 namespace Editor
 {
     [CustomEditor(typeof(ArtifactTemplate))]
@@ -19,7 +17,7 @@ namespace Editor
         private SerializedProperty _artifactName;
         private SerializedProperty _artifactIcon;
         private ReorderableList _artifactEffects;
-
+        
         public void OnEnable()
         {
             _artifactName = serializedObject.FindProperty("artifactName");
@@ -34,19 +32,27 @@ namespace Editor
                 true
             );
 
+            for (int i = 0; i < serializedObject.targetObjects.Length; i++)
+            {
+                Debug.Log("targetObjects[" + i + "]" + ": " + serializedObject.targetObjects[i]);
+                
+            }
+
             SetDrawHeaderCallback();
             SetDrawElementCallback();
 
-            SetOnAddCallback();
+            //SetOnAddCallback();
             SetOnDropDownCallback();
         }
 
+        
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
 
             EditorGUILayout.PropertyField(_artifactName);
             EditorGUILayout.PropertyField(_artifactIcon);
+            
             _artifactEffects.DoLayoutList();
 
             serializedObject.ApplyModifiedProperties();
@@ -71,32 +77,25 @@ namespace Editor
                 {
                     if (rect.width - numberWidth > minNameWidth)
                         nameWidth = (int)(rect.width - numberWidth);
+
                     var element = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
-
+                    
                     rect.y += 2;
+        
+        
+                    UnityEditor.Editor editor;
+ 
+                    CreateCachedEditor(element.objectReferenceValue, typeof(CharacterAttributeModiferEditor), ref editor);  
+ 
+                    if (editor != null) {
+                        rect.y += EditorGUIUtility.singleLineHeight + 2;
+ 
+                        GUILayout.BeginArea(rect);
+                        editor.OnInspectorGUI();
+                        GUILayout.EndArea();
+                    }
 
-                    // Define the section for "Name".
-                    EditorGUI.PropertyField(
-                        new Rect(
-                            rect.x,
-                            rect.y,
-                            nameWidth,
-                            EditorGUIUtility.singleLineHeight),
-                        element.FindPropertyRelative("Name"),
-                        GUIContent.none
-                    );
-
-                    // Define the section for "Number"
-                    EditorGUI.PropertyField(
-                        new Rect(
-                            rect.x + nameWidth + horizontalPadding,
-                            rect.y + verticalPadding,
-                            numberWidth,
-                            EditorGUIUtility.singleLineHeight),
-                        element.FindPropertyRelative("Number"),
-                        GUIContent.none
-                    );
-
+                    
                 };
         }
 
@@ -104,13 +103,22 @@ namespace Editor
         {
             _artifactEffects.onAddCallback = (rl) =>
             {
-                var index = rl.serializedProperty.arraySize;
-                rl.serializedProperty.arraySize++;
-                rl.index = index;
+                var newItem = ScriptableObject.CreateInstance<DamageTestEffect>();
                 
-                var element = rl.serializedProperty.GetArrayElementAtIndex(index);
-                element.FindPropertyRelative("Name").stringValue = "NEW NAME";
-                element.FindPropertyRelative("Number").intValue = index * 10;
+                Debug.Log("ScriptableObject: " + newItem);
+                newItem.LowDiceValue = 1;
+                newItem.HighDiceValue = 6;
+                newItem.DiceCount = 2;
+                
+                serializedObject.FindProperty("artifactEffects").arraySize++;
+                var newItemIndex = serializedObject.FindProperty("artifactEffects").arraySize - 1;
+                serializedObject.FindProperty("artifactEffects").GetArrayElementAtIndex(newItemIndex).objectReferenceValue = newItem;
+                serializedObject.ApplyModifiedProperties();
+                
+                var property = serializedObject.FindProperty("artifactEffects").GetArrayElementAtIndex(newItemIndex);
+                Debug.Log("Property: " + property.objectReferenceValue);
+                
+                serializedObject.ApplyModifiedProperties();
             };
         }
         private void SetOnRemoveCallback()
@@ -137,35 +145,34 @@ namespace Editor
                 var menu = new GenericMenu();
 
                 var allEffectTypes = GetInheritedClasses(typeof(Effect));
-                
+
                 foreach (var subType in allEffectTypes)
                 {
                     menu.AddItem(
                         new GUIContent(TypeName(subType)),
                         false,
-                        CreateEffectCallback,
+                        CreateEffectCallback<DrawAtStartTestEffect>,
                         subType
-                    );    
+                    );
                 }
-                
                 menu.ShowAsContext();
             };
         }
 
-        private void CreateEffectCallback(object selectedEffect)
+        private void CreateEffectCallback<T>(object selectedEffect) where T : Effect
         {
-            var index = _artifactEffects.serializedProperty.arraySize;
-            _artifactEffects.serializedProperty.arraySize++;
-            _artifactEffects.index = index;
+            var effects = (serializedObject.targetObjects[0] as ArtifactTemplate)?.ArtifactEffects;
 
-            var newElement = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
-            newElement.FindPropertyRelative("Name").stringValue = "Name assigned here.";
-            newElement.FindPropertyRelative("Number").intValue = index * 10;
-
+            var newEffectToAdd = ScriptableObject.CreateInstance((Type)selectedEffect);// Create a new instance of the effect. 
+            AssetDatabase.AddObjectToAsset(newEffectToAdd, serializedObject.targetObjects[0]);
+            
+            Debug.Log("Created Type: " + newEffectToAdd.GetType());
+            effects.Add((Effect)newEffectToAdd);
+            
             serializedObject.ApplyModifiedProperties();
         }
         
-        private IEnumerable<Type> GetInheritedClasses(Type abstractType) 
+        private List<Type> GetInheritedClasses(Type abstractType) 
         {
             return Assembly.GetAssembly(abstractType).GetTypes().
                 Where(
@@ -173,7 +180,7 @@ namespace Editor
                         theType.IsClass &&
                         !theType.IsAbstract &&
                         theType.IsSubclassOf(abstractType)
-                        ).ToArray();
+                        ).ToList();
         }
 
         private string TypeName(Type type)

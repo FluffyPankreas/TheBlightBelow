@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using ArtifactEffects;
+using Temp;
 
 namespace GameArchitecture
 {
@@ -17,8 +18,8 @@ namespace GameArchitecture
         [SerializeField,Tooltip("The icon that will show up in the UI.")]
         private Sprite artifactIcon;
 
-        [SerializeField,Tooltip("The list of effects that the artifact possesses.")]
-        private List<Effect> artifactEffects = new List<Effect>();
+        [SerializeField, Tooltip("The list of effects that the artifact possesses.")]
+        private List<ArtifactEffects.Effect> artifactEffects;
 
         /// <summary>
         /// The name of the artifact.
@@ -33,6 +34,6 @@ namespace GameArchitecture
         /// <summary>
         /// The effects that the artifact will apply to the game.
         /// </summary>
-        public List<Effect> ArtifactEffects => artifactEffects;
+        public List<ArtifactEffects.Effect> ArtifactEffects => artifactEffects;
     }
 }
