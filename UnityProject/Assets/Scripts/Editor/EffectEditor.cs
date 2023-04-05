@@ -8,6 +8,7 @@ namespace Editor
     {
         public override void OnInspectorGUI()
         {
+            DrawDefaultInspector();
         }
     }
 }
