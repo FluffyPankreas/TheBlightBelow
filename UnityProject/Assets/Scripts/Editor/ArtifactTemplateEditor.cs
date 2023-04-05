@@ -124,9 +124,9 @@ namespace Editor
             _artifactEffects.drawElementCallback = (rect, index, active, focused) =>
             {
                 //var currentElement = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
-                
                 var currentEffect = ((ArtifactTemplate)serializedObject.targetObjects[0]).ArtifactEffects[index];
                 var editor = CreateEditor(currentEffect) as EffectEditor;
+                EditorGUILayout.Space();
                 editor!.OnInspectorGUI();
             };
         }
@@ -140,7 +140,6 @@ namespace Editor
             AssetDatabase.AddObjectToAsset(newEffectToAdd, serializedObject.targetObjects[0]);
             AssetDatabase.SaveAssets();
             
-            Debug.Log("Created Type: " + newEffectToAdd.GetType());
             effects!.Add((Effect)newEffectToAdd);
             
             serializedObject.ApplyModifiedProperties();
