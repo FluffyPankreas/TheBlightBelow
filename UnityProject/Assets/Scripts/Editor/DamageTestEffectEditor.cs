@@ -1,13 +1,13 @@
 using UnityEditor;
+using ArtifactEffects;
 
 namespace Editor
 {
-    [CustomEditor(typeof(DamageTestEffectEditor))]
-    public sealed class DamageTestEffectEditor : UnityEditor.Editor
+    [CustomEditor(typeof(DamageTestEffect))]
+    public sealed class DamageTestEffectEditor : EffectEditor
     {
         public override void OnInspectorGUI()
         {
-            //base.OnInspectorGUI();
         }
     }
 }

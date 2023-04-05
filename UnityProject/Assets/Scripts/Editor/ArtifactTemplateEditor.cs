@@ -92,15 +92,11 @@ namespace Editor
                         "No")
                    )
                 {
-                    //ReorderableList.defaultBehaviours.DoRemoveButton(effects);
-                    // Get the index of the selected element
-                    int index = effects.index;
-
-                    // Remove the element from the list
-                    //effects.serializedProperty.GetArrayElementAtIndex(index);
+                    var index = effects.index;
                     var so = effects.serializedProperty.GetArrayElementAtIndex(index);
                     AssetDatabase.RemoveObjectFromAsset(so.objectReferenceValue);
                     AssetDatabase.SaveAssets();
+
                     effects.serializedProperty.DeleteArrayElementAtIndex(index);
                     effects.serializedProperty.serializedObject.ApplyModifiedProperties();
                 }
@@ -112,6 +108,27 @@ namespace Editor
         /// </summary>
         private void SetArtifactEffectListDrawElementCallback()
         {
+            /*
+                //Get the SerializedObject for the ObjectInScene instance
+                SerializedObject objSerialized = new SerializedObject(objectInScene);
+
+                // Create an instance of the custom editor for ObjectInScene
+                ObjectInScene.ObjectInSceneEditor editor = Editor.CreateEditor(objectInScene) as ObjectInScene.ObjectInSceneEditor;
+
+                // Call the OnInspectorGUI method of the custom editor with the SerializedObject argument
+                editor.OnInspectorGUI();
+
+                // Apply any changes made to the SerializedObject
+                objSerialized.ApplyModifiedProperties();
+            */
+            _artifactEffects.drawElementCallback = (rect, index, active, focused) =>
+            {
+                //var currentElement = _artifactEffects.serializedProperty.GetArrayElementAtIndex(index);
+                
+                var currentEffect = ((ArtifactTemplate)serializedObject.targetObjects[0]).ArtifactEffects[index];
+                var editor = CreateEditor(currentEffect) as EffectEditor;
+                editor!.OnInspectorGUI();
+            };
         }
 
         private void CreateEffectCallback(object effectType)
