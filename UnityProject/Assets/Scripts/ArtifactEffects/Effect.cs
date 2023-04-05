@@ -10,7 +10,6 @@ namespace ArtifactEffects
     public abstract class Effect : ScriptableObject
     {
         [SerializeField] public string Name;
-        [SerializeField] public int Number;
 
         public abstract void Resolve();
     }
