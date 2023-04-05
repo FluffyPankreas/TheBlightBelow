@@ -137,6 +137,7 @@ namespace Editor
 
             var newEffectToAdd = ScriptableObject.CreateInstance((Type)effectType);// Create a new instance of the effect.
             newEffectToAdd.name = ((Type)effectType).Name;
+            newEffectToAdd.hideFlags = HideFlags.HideInHierarchy;
             AssetDatabase.AddObjectToAsset(newEffectToAdd, serializedObject.targetObjects[0]);
             AssetDatabase.SaveAssets();
             
