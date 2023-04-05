@@ -16,7 +16,9 @@ namespace Editor
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-            
+
+            EditorGUILayout.LabelField(serializedObject.targetObject.name);
+            EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.PropertyField(_name);
             EditorGUILayout.EndHorizontal();
