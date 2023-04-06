@@ -1,9 +1,6 @@
-using System;
-using DarkMushroomGames.GameEffects;
 using UnityEditor;
-using UnityEngine;
 
-namespace Editor
+namespace DarkMushroomGames.GameEffects.Editor
 {
     [CustomEditor(typeof(Effect))]
     public class EffectEditor : UnityEditor.Editor

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using DarkMushroomGames.GameEffects;
-using Editor;
+using DarkMushroomGames.GameEffects.Editor;
 using GameArchitecture;
 using UnityEditor;
 using UnityEditorInternal;
