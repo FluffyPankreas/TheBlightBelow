@@ -1,15 +1,16 @@
 using System;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UnityEngine;
+using System.Text.RegularExpressions;
+using DarkMushroomGames.GameEffects;
+using Editor;
+using GameArchitecture;
 using UnityEditor;
 using UnityEditorInternal;
-using GameArchitecture;
-using ArtifactEffects;
+using UnityEngine;
 
-namespace Editor
+namespace DarkMushroomGames.GameArchitecture.Editor
 {
     [CustomEditor(typeof(ArtifactTemplate))]
     public class ArtifactTemplateEditor : UnityEditor.Editor

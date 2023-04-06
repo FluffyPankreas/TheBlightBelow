@@ -1,10 +1,11 @@
 using System;
+using DarkMushroomGames.GameEffects;
 using UnityEditor;
 using UnityEngine;
 
 namespace Editor
 {
-    [CustomEditor(typeof(ArtifactEffects.Effect))]
+    [CustomEditor(typeof(Effect))]
     public class EffectEditor : UnityEditor.Editor
     {
         private SerializedProperty _name;

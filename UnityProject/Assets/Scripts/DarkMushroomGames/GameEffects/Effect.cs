@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ArtifactEffects
+namespace DarkMushroomGames.GameEffects
 {
     /// <summary>
     /// The base effect that all artifact effects should inherit from.
