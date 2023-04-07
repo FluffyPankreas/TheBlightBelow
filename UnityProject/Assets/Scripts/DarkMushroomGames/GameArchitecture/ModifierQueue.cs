@@ -7,10 +7,10 @@ namespace DarkMushroomGames.GameArchitecture
 {
     public class ModifierQueue : MonoBehaviourSingleton<ModifierQueue>
     {
+        [SerializeField,Tooltip("The event raised when a new modifier is queued.")]
+        private CCGKit.GameEvent onEnqueueEvent;
+
         private readonly List<ModifierInformation> _modifierQueue = new();
-
-        public CCGKit.GameEvent onEnqueueEvent;
-
         public void Awake()
         {
             Debug.Assert(onEnqueueEvent != null,
