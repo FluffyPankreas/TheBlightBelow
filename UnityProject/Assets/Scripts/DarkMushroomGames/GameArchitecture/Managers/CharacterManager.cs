@@ -50,7 +50,16 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         public void OnPlayerTurnStart()
         {
             // Debug.Log("OnPlayerTurnStart(): " + this.name, gameObject);
-            var additionalDefense = 0;
+        }
+
+        /// <summary>
+        /// Handles events for when the player turn ends.
+        /// </summary>
+        public void OnPlayerTurnEnd()
+        {
+            // Debug.Log("OnPlayerTurnEnd(): " + this.name, gameObject);
+            
+            var additionalDefense = playerEncounterDefense.Value;
             foreach (var modifierInfo in ModifierQueue.Instance.GetModifiers())
             {
                 if (modifierInfo.type == defenseType)
@@ -59,7 +68,10 @@ namespace DarkMushroomGames.GameArchitecture.Managers
                 }
             }
 
+            
             playerEncounterDefense.SetValue(additionalDefense);
+            
         }
+        
     }
 }
