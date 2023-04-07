@@ -32,15 +32,22 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         /// </summary>
         public void OnModifierQueueChanged()
         {
-            
+            // Debug.Log("OnModifierQueueChanged():" + this.name, gameObject);            
         }
 
+        public void OnEncounterStart()
+        {
+            Debug.Log("OnEncounterStart():" + this.name, gameObject);
+            // add effects of artifacts
+            
+        }
+        
         /// <summary>
         /// Handles events for when the player turn starts.
         /// </summary>
         public void OnPlayerTurnStart()
         {
-            // Debug.Log("OnPlayerTurnStart: " + this.name, gameObject);
+            // Debug.Log("OnPlayerTurnStart(): " + this.name, gameObject);
             var additionalDefense = 0;
             foreach (var modifierInfo in ModifierQueue.Instance.GetModifiers())
             {
