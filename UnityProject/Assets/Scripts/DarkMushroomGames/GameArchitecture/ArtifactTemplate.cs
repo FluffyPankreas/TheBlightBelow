@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DarkMushroomGames.GameEffects;
+using UnityEngine.UI;
 
 namespace GameArchitecture
 {
@@ -15,7 +16,7 @@ namespace GameArchitecture
         private string artifactName;
         
         [SerializeField,Tooltip("The icon that will show up in the UI.")]
-        private Sprite artifactIcon;
+        private Image artifactIcon;
 
         [SerializeField, Tooltip("The list of effects that the artifact possesses.")]
         private List<Effect> artifactEffects;
@@ -28,7 +29,7 @@ namespace GameArchitecture
         /// <summary>
         /// The icon of the artifact for UI purposes.
         /// </summary>
-        public Sprite ArtifactIcon => artifactIcon;
+        public Image ArtifactIcon => artifactIcon;
         
         /// <summary>
         /// The effects that the artifact will apply to the game.
