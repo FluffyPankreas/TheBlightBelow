@@ -2139,6 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b0537397c3248e1ac0753388d39395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EncounterStart: {fileID: 11400000, guid: 5d9a8129fd29bfe43b8bf19856b8011e, type: 2}
   PlayerTurnBegan: {fileID: 11400000, guid: 36e38c94ff32a40629fcafd4ef9c50e2, type: 2}
   PlayerTurnEnded: {fileID: 11400000, guid: 99d6cb10f0ad14a0bbc513d045e0fb17, type: 2}
   EnemyTurnBegan: {fileID: 11400000, guid: 6eee2b6d0779645d294aa4eadde9497a, type: 2}
