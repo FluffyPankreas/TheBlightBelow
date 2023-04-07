@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e31e688086974d25bb4daf05c561641, type: 3}
-  m_Name: RunCardLibrary
+  m_Name: DiscardLibrary.Encounter
   m_EditorClassIdentifier: 
-  libraryPurpose: "Thes card libarry represents the deck\nbeing used during a run.
-    This deck can \nchange during a run. "
-  Name: RunDeck
-  _cards:
-  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
-  - {fileID: 11400000, guid: 95166dc18199b654ba6653e5e59b1274, type: 2}
+  variablePurpose: "This represents the deck that is being \nused during an encounter
+    for discarding."
+  meantToBeUsedAtRuntime: 1
+  Name: EncounterDiscardDeck
+  Entries: []
