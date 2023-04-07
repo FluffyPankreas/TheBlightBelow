@@ -20,7 +20,16 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         /// </summary>
         public void OnModifierQueueChanged()
         {
-            Debug.Log("OnModifierQueueChanged.");
+            
+        }
+
+        /// <summary>
+        /// Handles events for when the player turn starts.
+        /// </summary>
+        public void OnPlayerTurnStart()
+        {
+            Debug.Log("OnPlayerTurnStart: " + this.name, gameObject);
+            
         }
     }
 }
