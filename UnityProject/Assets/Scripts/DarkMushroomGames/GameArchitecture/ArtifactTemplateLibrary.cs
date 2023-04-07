@@ -12,7 +12,7 @@ namespace DarkMushroomGames.GameArchitecture
         fileName = "ArtifactTemplateLibrary")]
     public class ArtifactTemplateLibrary : ScriptableObject
     {
-        [Tooltip("Short description of how this library is meant to be used.")]
+        [Tooltip("Short description of how this library is meant to be used."), Multiline(3)]
         public string libraryPurpose = string.Empty;
 
         [SerializeField,Tooltip("The artifacts contained in this library.")]
