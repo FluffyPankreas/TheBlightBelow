@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using DarkMushroomGames.GameArchitecture;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -18,5 +19,6 @@ namespace CCGKit
         public int GoldRewardLow;
         public int GoldRewardHigh;
         public List<AssetReference> Enemies = new List<AssetReference>();
+        public ArtifactTemplateLibrary ArtifactRewards;
     }
 }

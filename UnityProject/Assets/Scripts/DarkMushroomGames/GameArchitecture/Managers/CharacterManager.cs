@@ -1,5 +1,6 @@
 using CCGKit;
 using DarkMushroomGames.Architecture;
+using GameArchitecture;
 using UnityEngine;
 
 namespace DarkMushroomGames.GameArchitecture.Managers
@@ -33,6 +34,12 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         public void OnModifierQueueChanged()
         {
             // Debug.Log("OnModifierQueueChanged():" + this.name, gameObject);
+        }
+
+        public void PickupArtifact(ArtifactTemplate newArtifact)
+        {
+            // Debug.Log("New artifact picked up: " + newArtifact.ArtifactName);
+            artifactInventory.AddArtifactTemplate(newArtifact);
         }
 
         public void OnEncounterStart()

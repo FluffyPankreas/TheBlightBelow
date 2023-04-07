@@ -16,7 +16,7 @@ namespace DarkMushroomGames.GameArchitecture
         public string libraryPurpose = string.Empty;
 
         [SerializeField,Tooltip("The artifacts contained in this library.")]
-        private List<ArtifactTemplate> artifacts;
+        private List<ArtifactTemplate> artifacts = new List<ArtifactTemplate>();
 
         /// <summary>
         /// Adds a new template to the library. 
