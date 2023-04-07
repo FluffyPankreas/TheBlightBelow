@@ -15,6 +15,9 @@ namespace DarkMushroomGames.GameArchitecture.Managers
     /// </summary>
     public class CharacterManager : MonoBehaviourSingleton<CharacterManager>
     {
+        [SerializeField, Tooltip("The runtime variable that holds the artifacts obtained so far in the run.")]
+        private ArtifactTemplateLibrary artifactInventory;
+        
         [Header("Runtime Variables")]
         [SerializeField,Tooltip("The runtime variable for updating the player defense during an encounter.")]
         private IntVariable playerEncounterDefense;
