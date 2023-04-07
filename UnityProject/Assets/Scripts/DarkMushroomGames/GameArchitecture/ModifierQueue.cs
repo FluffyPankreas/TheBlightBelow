@@ -22,6 +22,12 @@ namespace DarkMushroomGames.GameArchitecture
         {
             onEnqueueEvent!.Raise();
             _modifierQueue.Add(new ModifierInformation(type,value));
+            Debug.Log("Added modifier effect: " + type.name, type);
+        }
+
+        public List<ModifierInformation> GetModifiers()
+        {
+            return _modifierQueue;
         }
     }
 }
