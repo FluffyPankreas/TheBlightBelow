@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1707041257940923304
 MonoBehaviour:
@@ -92,14 +92,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f85aeac94fe49aa85c3095ee88922d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 36e38c94ff32a40629fcafd4ef9c50e2, type: 2}
+  Event: {fileID: 11400000, guid: 99d6cb10f0ad14a0bbc513d045e0fb17, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1707041257940923304}
         m_TargetAssemblyTypeName: DarkMushroomGames.GameArchitecture.Managers.CharacterManager,
           Assembly-CSharp
-        m_MethodName: OnPlayerTurnStart
+        m_MethodName: OnPlayerTurnEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
