@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrintTrace: 0
+  playerEncounterDefense: {fileID: 11400000, guid: 8529176b802cc4558aa5576c19888370, type: 2}
+  defenseType: {fileID: 11400000, guid: f94c639fb819bad40a1117b2c82d6df2, type: 2}
 --- !u!114 &5377353900665509671
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,8 +1,13 @@
+using CCGKit;
 using DarkMushroomGames.Architecture;
 using UnityEngine;
 
 namespace DarkMushroomGames.GameArchitecture.Managers
 {
+    //Todo: Add runtime variables for the character attributes here(eg. currentHealth, maxHealth)
+    //Todo: Add ways to initialize variables for when encounters start.
+    //Todo: Add ways to initialize variables for when runs start/load.
+    
     /// <summary>
     /// This manager is responsible for making changes to the character. This includes things like processing
     /// changes to max health, current health and other runtime effects. It will listen to events that require
@@ -10,9 +15,13 @@ namespace DarkMushroomGames.GameArchitecture.Managers
     /// </summary>
     public class CharacterManager : MonoBehaviourSingleton<CharacterManager>
     {
-        //Todo: Add runtime variables for the character attributes here(eg. currentHealth, maxHealth)
-        //Todo: Add ways to initialize variables for when encounters start.
-        //Todo: Add ways to initialize variables for when runs start/load.
+        [Header("Runtime Variables")]
+        [SerializeField,Tooltip("The runtime variable for updating the player defense during an encounter.")]
+        private IntVariable playerEncounterDefense;
+        
+        [Header("Modifiers to process")]
+        [SerializeField,Tooltip("The modifier type that the manager associates with processing defensive effects.")]
+        private ModifierType defenseType;
         
         /// <summary>
         /// Handles events for when the modifier queue changes. It checks for relevant modifiers and applies
@@ -28,8 +37,17 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         /// </summary>
         public void OnPlayerTurnStart()
         {
-            Debug.Log("OnPlayerTurnStart: " + this.name, gameObject);
-            
+            // Debug.Log("OnPlayerTurnStart: " + this.name, gameObject);
+            var additionalDefense = 0;
+            foreach (var modifierInfo in ModifierQueue.Instance.GetModifiers())
+            {
+                if (modifierInfo.type == defenseType)
+                {
+                    additionalDefense += modifierInfo.value;
+                }
+            }
+
+            playerEncounterDefense.SetValue(additionalDefense);
         }
     }
 }
