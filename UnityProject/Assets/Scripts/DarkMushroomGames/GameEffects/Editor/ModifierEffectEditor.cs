@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace DarkMushroomGames.GameEffects.Editor
 {
@@ -11,9 +12,13 @@ namespace DarkMushroomGames.GameEffects.Editor
         {
             base.OnEnable();
 
-            _modifierType = serializedObject.FindProperty("ModifierType");
-            _modifierValue = serializedObject.FindProperty("ModifierValue");
-            
+            _modifierType = serializedObject.FindProperty("Type");
+            _modifierValue = serializedObject.FindProperty("Value");
+
+            Debug.Assert(_modifierType != null,
+                "The value could not be found for 'Type'. Please check that the script has not been updated without updating the editor.");
+            Debug.Assert(_modifierValue != null,
+                "The value could not be found for 'Value'. Please check that the script has not been updated without updating the editor.");
         }
         public override void OnInspectorGUI()
         {
