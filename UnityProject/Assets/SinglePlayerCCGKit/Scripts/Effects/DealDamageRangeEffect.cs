@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
+using DarkMushroomGames.GameArchitecture;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,9 @@ namespace CCGKit
     [Serializable]
     public class DealDamageRangeEffect : IntegerRangeEffect, IEntityEffect
     {
+        [SerializeField,Tooltip("The damage effect associated with this effect.")]
+        private ModifierType damageType;
+        
         public override string GetName()
         {
             return $"Deal {LowValue.ToString()}-{HighValue} damage";
@@ -27,6 +31,14 @@ namespace CCGKit
             var shield = targetShield.Value;
             var damage = Random.Range(LowValue, HighValue);
 
+            foreach (var modifierInformation in ModifierQueue.Instance.GetModifiers())
+            {
+                if (modifierInformation.type == damageType)
+                {
+                    damage += modifierInformation.value;
+                }
+            }
+            
             var strength = instigator.Status.GetValue("Strength");
             damage += strength;
 
