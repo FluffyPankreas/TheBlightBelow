@@ -34,5 +34,16 @@ namespace GameArchitecture
         /// The effects that the artifact will apply to the game.
         /// </summary>
         public List<Effect> ArtifactEffects => artifactEffects;
+
+        /// <summary>
+        /// Applies all the effects of the artifact. 
+        /// </summary>
+        public void ApplyEffects()
+        {
+            foreach (var effect in artifactEffects)
+            {
+                effect.Resolve();
+            }
+        }
     }
 }
