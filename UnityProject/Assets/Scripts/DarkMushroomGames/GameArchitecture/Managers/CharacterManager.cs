@@ -32,14 +32,16 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         /// </summary>
         public void OnModifierQueueChanged()
         {
-            // Debug.Log("OnModifierQueueChanged():" + this.name, gameObject);            
+            // Debug.Log("OnModifierQueueChanged():" + this.name, gameObject);
         }
 
         public void OnEncounterStart()
         {
             Debug.Log("OnEncounterStart():" + this.name, gameObject);
-            // add effects of artifacts
-            
+            foreach (var artifact in artifactInventory.GetTemplateArtifacts())
+            {
+                artifact.ApplyEffects();
+            }
         }
         
         /// <summary>
