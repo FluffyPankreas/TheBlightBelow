@@ -11,7 +11,8 @@ namespace DarkMushroomGames.GameArchitecture
         private CCGKit.GameEvent onEnqueueEvent;
 
         private readonly List<ModifierInformation> _modifierQueue = new();
-        public void Awake()
+        
+        protected override void SingletonAwakened()
         {
             Debug.Assert(onEnqueueEvent != null,
                 "The onEnqueueEvent isn't assigned. This will prevent other systems from responding properly. Please make sure you are using a prefab for the singleton.",
