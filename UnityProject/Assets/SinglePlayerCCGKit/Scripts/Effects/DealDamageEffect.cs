@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
+using DarkMushroomGames.GameArchitecture;
 using UnityEngine;
 
 namespace CCGKit
@@ -13,6 +14,9 @@ namespace CCGKit
     [Serializable]
     public class DealDamageEffect : IntegerEffect, IEntityEffect
     {
+        [SerializeField,Tooltip("The damage effect associated with this effect.")]
+        private ModifierType damageType;
+        
         public override string GetName()
         {
             return $"Deal {Value.ToString()} damage";
@@ -26,6 +30,14 @@ namespace CCGKit
             var shield = targetShield.Value;
             var damage = Value;
 
+            foreach (var modifierInformation in ModifierQueue.Instance.GetModifiers())
+            {
+                if (modifierInformation.type == damageType)
+                {
+                    damage += modifierInformation.value;
+                }
+            }
+                
             var strength = instigator.Status.GetValue("Strength");
             damage += strength;
 
