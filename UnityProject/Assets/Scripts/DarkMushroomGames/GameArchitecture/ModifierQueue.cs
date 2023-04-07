@@ -1,14 +1,14 @@
 using System.Collections.Generic;
+using CCGKit;
 using UnityEngine;
 using DarkMushroomGames.Architecture;
-using UnityEngine.Serialization;
 
 namespace DarkMushroomGames.GameArchitecture
 {
     public class ModifierQueue : MonoBehaviourSingleton<ModifierQueue>
     {
         [SerializeField,Tooltip("The event raised when a new modifier is queued.")]
-        private CCGKit.GameEvent onEnqueueEvent;
+        private GameEvent onEnqueueEvent;
 
         private readonly List<ModifierInformation> _modifierQueue = new();
         
@@ -29,6 +29,15 @@ namespace DarkMushroomGames.GameArchitecture
         public List<ModifierInformation> GetModifiers()
         {
             return _modifierQueue;
+        }
+
+        /// <summary>
+        /// Event handler for when the encounter ends.
+        /// </summary>
+        public void OnEncounterEnd()
+        {
+            // Clear all modifiers before the next encounter.
+            _modifierQueue.Clear();
         }
     }
 }
