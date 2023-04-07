@@ -5,7 +5,13 @@ namespace DarkMushroomGames.GameArchitecture
     [Serializable]
     public class ModifierInformation
     {
-        public ModifierType Type;
-        public int Value;
+        public ModifierType type;
+        public int value;
+
+        public ModifierInformation(ModifierType type, int value)
+        {
+            this.type = type;
+            this.value = value;
+        }
     }
 }
