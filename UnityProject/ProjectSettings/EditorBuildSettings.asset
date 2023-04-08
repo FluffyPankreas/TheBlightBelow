@@ -9,7 +9,16 @@ EditorBuildSettings:
     path: Assets/SinglePlayerCCGKit/Scenes/Map.unity
     guid: 8da417e458d8248218d82c73e3253276
   - enabled: 1
+    path: Assets/Scenes/GameScenes/RequiredSystems.unity
+    guid: 4b1147eb1bdbd2f4a94dc06003056236
+  - enabled: 1
     path: Assets/SinglePlayerCCGKit/Scenes/Game.unity
     guid: d0b42c3c1f4c743cbabb99ffbe23de6a
+  - enabled: 0
+    path: Assets/Scenes/Richard Test Scene 4 - setup.unity
+    guid: 9d91258327b46a942b9bb894a7d34218
+  - enabled: 0
+    path: Assets/Scenes/Richard Test Scene3.unity
+    guid: b5d93d12a4ffa6f4a86b296c8f54a1dd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 7000d367ce944f74fbac55c196230f63, type: 2}

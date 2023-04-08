@@ -10,7 +10,7 @@ namespace CCGKit
     /// The type corresponding to the "Gain X shield" card effect.
     /// </summary>
     [Serializable]
-    public class GainShieldEffect : IntegerEffect, IEntityEffect
+    public class GainShieldEffect : IntegerEffect
     {
         public override string GetName()
         {

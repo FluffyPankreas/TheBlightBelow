@@ -15,5 +15,9 @@ MonoBehaviour:
   Encounters:
   - Name: Rest
     EncounterType: 2
-    Background: {fileID: 21300000, guid: 45c4b9c77b640564a80617c969d7acc9, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: 45c4b9c77b640564a80617c969d7acc9, type: 3}
+    GoldRewardLow: 0
+    GoldRewardHigh: 0
     Enemies: []
+    ArtifactRewards: {fileID: 0}

@@ -15,9 +15,17 @@ MonoBehaviour:
   Encounters:
   - Name: Merchant1
     EncounterType: 4
-    Background: {fileID: 21300000, guid: e9f7b82b3d12e9d4bb09749dc021f7ec, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 0
+    GoldRewardHigh: 0
     Enemies: []
+    ArtifactRewards: {fileID: 0}
   - Name: Merchant2
     EncounterType: 4
-    Background: {fileID: 21300000, guid: 63879054bcdf8174daedb0365dd325f6, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 0
+    GoldRewardHigh: 0
     Enemies: []
+    ArtifactRewards: {fileID: 0}

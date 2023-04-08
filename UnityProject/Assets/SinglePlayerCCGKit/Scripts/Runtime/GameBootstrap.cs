@@ -8,7 +8,6 @@ using GameSystems;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
-using UnityEngine.WSA;
 using Random = UnityEngine.Random;
 
 namespace CCGKit
@@ -136,7 +135,9 @@ namespace CCGKit
                 }
 
                 
-                background.sprite = gameInfo.Encounter.Background;
+                
+                background.sprite = gameInfo.Encounter.Backgrounds[UnityEngine.Random.Range(0,gameInfo.Encounter.Backgrounds.Count)];
+                
                 switch (gameInfo.Encounter.EncounterType)
                 {
                     case NodeType.Rest:

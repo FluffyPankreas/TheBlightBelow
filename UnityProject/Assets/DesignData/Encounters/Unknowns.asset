@@ -15,5 +15,9 @@ MonoBehaviour:
   Encounters:
   - Name: Unknowns
     EncounterType: 5
-    Background: {fileID: 21300000, guid: 45c4b9c77b640564a80617c969d7acc9, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    GoldRewardLow: 0
+    GoldRewardHigh: 0
     Enemies: []
+    ArtifactRewards: {fileID: 0}

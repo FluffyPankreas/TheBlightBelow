@@ -17,6 +17,7 @@ namespace CCGKit
     /// </summary>
     public class TurnManagementSystem : MonoBehaviour
     {
+        public GameEvent EncounterStart;
         public GameEvent PlayerTurnBegan;
         public GameEvent PlayerTurnEnded;
         public GameEvent EnemyTurnBegan;
@@ -46,6 +47,7 @@ namespace CCGKit
 
         public void BeginGame()
         {
+            EncounterStart!.Raise();
             BeginPlayerTurn();
         }
 

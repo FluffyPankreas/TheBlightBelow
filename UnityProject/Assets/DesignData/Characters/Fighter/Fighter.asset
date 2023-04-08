@@ -17,7 +17,7 @@ MonoBehaviour:
   Actions: []
   MaximumHp: 75
   Mana: 3
-  BaseDrawAmount: 3
+  BaseDrawAmount: 5
   StartingDeck: {fileID: 11400000, guid: 68b7896d609a553449044bff938ae0e8, type: 2}
   RewardDeck: {fileID: 11400000, guid: 9e8c045d84afd244f8b9f5980a671d0e, type: 2}
   StartingGoldAmount: 100

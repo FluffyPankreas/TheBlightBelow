@@ -15,7 +15,12 @@ MonoBehaviour:
   Encounters:
   - Name: Green Dragon + Demon
     EncounterType: 0
-    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: c3a35f3e4ba38794c828ca679b321d39, type: 3}
+    - {fileID: 21300000, guid: 7c94093abb3d10e44b936aa936fc3080, type: 3}
+    - {fileID: 21300000, guid: 08d1f53e31d07904096c1a87d418b704, type: 3}
+    - {fileID: 21300000, guid: 6ae0b397f07faec49aca754b65717b48, type: 3}
+    - {fileID: 21300000, guid: 7b688bb12df0cce4ea8da84200e13211, type: 3}
     GoldRewardLow: 50
     GoldRewardHigh: 75
     Enemies:
@@ -27,9 +32,15 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    ArtifactRewards: {fileID: 11400000, guid: a4c9bdb462ea542409190cd0980a5ab7, type: 2}
   - Name: Demon Spawn x2
     EncounterType: 0
-    Background: {fileID: 21300000, guid: 891ec20629d994aa78aa346489a7763f, type: 3}
+    Backgrounds:
+    - {fileID: 21300000, guid: c3a35f3e4ba38794c828ca679b321d39, type: 3}
+    - {fileID: 21300000, guid: 7c94093abb3d10e44b936aa936fc3080, type: 3}
+    - {fileID: 21300000, guid: 08d1f53e31d07904096c1a87d418b704, type: 3}
+    - {fileID: 21300000, guid: 6ae0b397f07faec49aca754b65717b48, type: 3}
+    - {fileID: 21300000, guid: 7b688bb12df0cce4ea8da84200e13211, type: 3}
     GoldRewardLow: 50
     GoldRewardHigh: 75
     Enemies:
@@ -41,3 +52,4 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    ArtifactRewards: {fileID: 11400000, guid: a4c9bdb462ea542409190cd0980a5ab7, type: 2}
