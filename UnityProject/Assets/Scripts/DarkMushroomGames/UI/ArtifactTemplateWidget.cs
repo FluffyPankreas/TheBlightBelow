@@ -24,12 +24,12 @@ namespace DarkMushroomGames.UI
         
         public void Awake()
         {
-            _widgetImage.GetComponent<Image>();
+             _widgetImage = GetComponent<Image>();
         }
 
         private void UpdateWidget()
         {
-            _widgetImage = artifactInformation.ArtifactIcon;            
+            _widgetImage.sprite = artifactInformation.ArtifactIcon;            
         }
     }
 }

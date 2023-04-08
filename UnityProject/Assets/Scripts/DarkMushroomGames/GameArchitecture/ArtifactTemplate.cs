@@ -16,7 +16,7 @@ namespace GameArchitecture
         private string artifactName;
         
         [SerializeField,Tooltip("The icon that will show up in the UI.")]
-        private Image artifactIcon;
+        private Sprite artifactIcon;
 
         [SerializeField, Tooltip("The list of effects that the artifact possesses.")]
         private List<Effect> artifactEffects;
@@ -29,7 +29,7 @@ namespace GameArchitecture
         /// <summary>
         /// The icon of the artifact for UI purposes.
         /// </summary>
-        public Image ArtifactIcon => artifactIcon;
+        public Sprite ArtifactIcon => artifactIcon;
         
         /// <summary>
         /// The effects that the artifact will apply to the game.
