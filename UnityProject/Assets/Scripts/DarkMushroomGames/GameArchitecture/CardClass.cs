@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace GameArchitecture
+namespace DarkMushroomGames.GameArchitecture
 {
     [CreateAssetMenu(
-        menuName = "Game Architecture/Card Class",
-        fileName = "CardType")]
+        menuName = "Dark Mushroom/Cards/Character Class",
+        fileName = "Class")]
         public class CardClass : ScriptableObject
     {
     }

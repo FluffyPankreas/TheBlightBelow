@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
-using GameArchitecture;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace DarkMushroomGames.GameArchitecture
 {
     [Serializable]
     [CreateAssetMenu(
-        menuName = "Dark Mushroom/Artifact Template Library",
+        menuName = "Dark Mushroom/Artifacts/Template Library",
         fileName = "ArtifactTemplateLibrary")]
     public class ArtifactTemplateLibrary : ScriptableObject
     {

@@ -8,12 +8,12 @@ namespace GameArchitecture
 {
     [Serializable]
     [CreateAssetMenu(
-        menuName = "Game Architecture/Card library",
+        menuName = "Dark Mushroom/Cards/Card library",
         fileName = "CardTemplateLibrary")]
     public class CardTemplateLibrary : ScriptableObject
     {
 #if UNITY_EDITOR
-        [FormerlySerializedAs("variablePurpose")] [Multiline,Tooltip("Give a short description of what the card library represents.")]
+        [Multiline,Tooltip("Give a short description of what the card library represents.")]
         public string libraryPurpose = string.Empty;
 #endif
         public string Name;
