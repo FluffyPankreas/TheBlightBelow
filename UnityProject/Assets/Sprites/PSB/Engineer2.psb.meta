@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0af81ee658d0fb4eb1cedfafe4ebee5
+guid: 2b180d903300f1f48a68107a6ac91ae6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,9 +103,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 435
       y: 1356
-      width: 334
-      height: 284
-    spriteID: 02894e0cf3ca8e340bf587d6be92ee29
+      width: 333
+      height: 274
+    spriteID: bbfd2045640c0ad4a8b0dd76afe01a3c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -126,7 +126,7 @@ ScriptedImporter:
       y: 4
       width: 478
       height: 1016
-    spriteID: dcc0811ebd8696d4984302698f4553eb
+    spriteID: 546713e45ab59064aa33f86adfb2c568
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -136,7 +136,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 908, y: 4}
     spritePosition: {x: 333, y: 95}
-  - name: Gun copy
+  - name: Gun
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -147,7 +147,7 @@ ScriptedImporter:
       y: 1356
       width: 423
       height: 356
-    spriteID: b333392ec80f69f4f9cb43670c09c55f
+    spriteID: ed7d69c70c0c8bc4084313740cb80fa2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -157,27 +157,6 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1356}
     spritePosition: {x: 130, y: 574}
-  - name: Gun
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 908
-      y: 1028
-      width: 254
-      height: 339
-    spriteID: 62c48bfb479a37445bd0b97376530e3f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 908, y: 1028}
-    spritePosition: {x: 270, y: 585}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +168,7 @@ ScriptedImporter:
       y: 4
       width: 896
       height: 1344
-    spriteID: e26bc21d2505e3d478b7b3d03bef1474
+    spriteID: 08d935d07dac64244a4fa045c0e63c26
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -237,19 +216,19 @@ ScriptedImporter:
     spriteName: head
     isGroup: 0
     parentIndex: -1
-    spriteID: 02894e0cf3ca8e340bf587d6be92ee29
+    spriteID: bbfd2045640c0ad4a8b0dd76afe01a3c
     layerID: 3
     mosaicPosition: {x: 435, y: 1356}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Medalian
-    spriteName: Medalian
+    spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 1b9cbb876a531294fa80b8a73b69f0f3
+    spriteID: 6eadfcfa9118c1e47ba4aac7924d78ea
     layerID: 4
-    mosaicPosition: {x: 345, y: 1120}
+    mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
@@ -257,39 +236,19 @@ ScriptedImporter:
     spriteName: body
     isGroup: 0
     parentIndex: -1
-    spriteID: dcc0811ebd8696d4984302698f4553eb
+    spriteID: 546713e45ab59064aa33f86adfb2c568
     layerID: 13
     mosaicPosition: {x: 908, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Gun copy
-    spriteName: Gun copy
-    isGroup: 0
-    parentIndex: -1
-    spriteID: b333392ec80f69f4f9cb43670c09c55f
-    layerID: 16
-    mosaicPosition: {x: 4, y: 1356}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: hidden gun
-    spriteName: 
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 9904b0067e61b0244a38dbf483639a0d
-    layerID: 17
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
   - name: Gun
     spriteName: Gun
     isGroup: 0
     parentIndex: -1
-    spriteID: 62c48bfb479a37445bd0b97376530e3f
-    layerID: 15
-    mosaicPosition: {x: 908, y: 1028}
+    spriteID: ed7d69c70c0c8bc4084313740cb80fa2
+    layerID: 16
+    mosaicPosition: {x: 4, y: 1356}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -297,7 +256,7 @@ ScriptedImporter:
     spriteName: Background
     isGroup: 0
     parentIndex: -1
-    spriteID: e26bc21d2505e3d478b7b3d03bef1474
+    spriteID: 08d935d07dac64244a4fa045c0e63c26
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
