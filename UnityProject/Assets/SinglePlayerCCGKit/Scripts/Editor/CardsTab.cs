@@ -3,7 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
-using CardEffects;
+using DarkMushroomGames.CardEffects;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;

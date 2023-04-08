@@ -3,7 +3,7 @@ using CCGKit;
 using UnityEditor;
 using UnityEngine;
 
-namespace CardEffects
+namespace DarkMushroomGames.CardEffects
 {
     [Serializable]
     public class ExhaustCardEffect : Effect
