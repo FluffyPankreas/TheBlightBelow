@@ -3,6 +3,7 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System;
+using GameArchitecture;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,9 +28,13 @@ namespace CCGKit
         [SerializeField, Tooltip("The card pile canvas.")]
         private Canvas cardPile;
 
+        [SerializeField, Tooltip("The discard card library.")]
+        private CardTemplateLibrary discardDeck;
+
         public void Update()
         {
             deckButton.enabled = !cardPile.gameObject.activeSelf;
+            SetAmount(discardDeck.Count);
         }
 
         public void SetAmount(int amount)

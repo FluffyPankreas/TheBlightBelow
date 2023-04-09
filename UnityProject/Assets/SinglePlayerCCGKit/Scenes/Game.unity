@@ -5048,6 +5048,7 @@ MonoBehaviour:
   textLabel: {fileID: 504850589}
   deckButton: {fileID: 1879537190}
   cardPile: {fileID: 868391477}
+  drawDeck: {fileID: 11400000, guid: 4f6db6460061eb344ab0cf94b5dd10e1, type: 2}
 --- !u!1 &1563364756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7247,6 +7248,7 @@ MonoBehaviour:
   textLabel: {fileID: 1716739215}
   deckButton: {fileID: 826725086}
   cardPile: {fileID: 868391477}
+  discardDeck: {fileID: 11400000, guid: 2b66b053b985d0943825aef545c5f3d3, type: 2}
 --- !u!114 &1990176851
 MonoBehaviour:
   m_ObjectHideFlags: 0
