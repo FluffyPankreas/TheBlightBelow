@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fighter
   m_EditorClassIdentifier: 
   Name: Figther
-  Prefab: {fileID: 2832429604840509992, guid: b9a5ead135d7ae8429ad106dce9463c5, type: 3}
+  Prefab: {fileID: 6345577701495959256, guid: b9a5ead135d7ae8429ad106dce9463c5, type: 3}
   Actions: []
   MaximumHp: 75
   Mana: 3
