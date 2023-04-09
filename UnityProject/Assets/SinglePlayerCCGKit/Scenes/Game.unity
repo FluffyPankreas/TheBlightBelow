@@ -5046,6 +5046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 504850589}
+  deckButton: {fileID: 1879537190}
+  cardPile: {fileID: 868391477}
 --- !u!1 &1563364756
 GameObject:
   m_ObjectHideFlags: 0
