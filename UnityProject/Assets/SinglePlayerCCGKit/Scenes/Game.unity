@@ -7245,6 +7245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 1716739215}
+  deckButton: {fileID: 826725086}
+  cardPile: {fileID: 868391477}
 --- !u!114 &1990176851
 MonoBehaviour:
   m_ObjectHideFlags: 0
