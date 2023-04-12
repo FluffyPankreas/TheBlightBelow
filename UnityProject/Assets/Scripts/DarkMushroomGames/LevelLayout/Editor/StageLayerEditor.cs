@@ -20,6 +20,14 @@ namespace DarkMushroomGames.LevelLayout.Editor
                 currentTarget!.RandomizeSetPieces();
             }
 
+            if (GUILayout.Button("Turn On all set pieces"))
+            {
+                foreach (var setPiece in currentTarget!.GetComponentsInChildren<SetPiece>(true))
+                {
+                    setPiece.gameObject.SetActive(true);
+                }    
+            }
+
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.BeginVertical();
