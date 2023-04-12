@@ -10,7 +10,7 @@ namespace CCGKit
     /// <summary>
     /// The widget used to display the player's mana.
     /// </summary>
-    public class ManaWidget : MonoBehaviour
+    public class EnergyWidget : MonoBehaviour
     {
 #pragma warning disable 649
         [SerializeField]
@@ -33,7 +33,7 @@ namespace CCGKit
             textBorder.text = text.text;
         }
 
-        public void OnManaChanged(int value)
+        public void OnEnergyChanged(int value)
         {
             SetValue(value);
         }

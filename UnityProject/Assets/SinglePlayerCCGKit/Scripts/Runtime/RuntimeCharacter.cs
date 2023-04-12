@@ -9,7 +9,7 @@ namespace CCGKit
         public IntVariable Hp;
         public IntVariable Shield;
 
-        public IntVariable Mana;
+        public IntVariable Energy;
 
         public StatusVariable Status;
 

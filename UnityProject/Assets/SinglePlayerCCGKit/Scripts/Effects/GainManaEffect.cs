@@ -10,17 +10,17 @@ namespace CCGKit
     /// The type corresponding to the "Gain X mana" card effect.
     /// </summary>
     [Serializable]
-    public class GainManaEffect : IntegerEffect, IEntityEffect
+    public class GainEnergyEffect : IntegerEffect, IEntityEffect
     {
         public override string GetName()
         {
-            return $"Gain {Value.ToString()} mana";
+            return $"Gain {Value.ToString()} energy";
         }
 
         public override void Resolve(RuntimeCharacter instigator, RuntimeCharacter target)
         {
-            var targetMana = target.Mana;
-            targetMana.SetValue(targetMana.Value + Value);
+            var targetEnergy = target.Energy;
+            targetEnergy.SetValue(targetEnergy.Value + Value);
         }
     }
 }

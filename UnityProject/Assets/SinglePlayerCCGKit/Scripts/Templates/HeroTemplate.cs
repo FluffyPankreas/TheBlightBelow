@@ -17,7 +17,7 @@ namespace CCGKit
     public class HeroTemplate : CharacterTemplate
     {
         [FormerlySerializedAs("Hp")] public int MaximumHp;
-        public int Mana;
+        public int Energy;
         [FormerlySerializedAs("DrawCount")] public int BaseDrawAmount;
         public CardTemplateLibrary StartingDeck;
         public CardTemplateLibrary RewardDeck;

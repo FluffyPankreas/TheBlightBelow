@@ -36,7 +36,7 @@ namespace CCGKit
         [SerializeField]
         private HandPresentationSystem handPresentationSystem;
         [SerializeField]
-        private ManaResetSystem manaResetSystem;
+        private EnergyResetSystem energyResetSystem;
         [SerializeField]
         private TurnManagementSystem turnManagementSystem;
         [SerializeField]
@@ -64,7 +64,7 @@ namespace CCGKit
         [SerializeField]
         private Canvas canvas;
         [SerializeField]
-        private ManaWidget manaWidget;
+        private EnergyWidget energyWidget;
         [SerializeField]
         private DeckWidget deckWidget;
         [SerializeField]
@@ -176,15 +176,15 @@ namespace CCGKit
                 Assert.IsNotNull(player);
 
                 var hp = playerConfig.Hp;
-                var mana = playerConfig.Mana;
+                var energy = playerConfig.Energy;
                 var shield = playerConfig.Shield;
                 var drawCount = playerConfig.DrawCount;
                 
                 hp.Value = characterTemplate.MaximumHp;
-                mana.Value = characterTemplate.Mana;
+                energy.Value = characterTemplate.Energy;
                 shield.Value = 0;
                 
-                manaResetSystem.SetDefaultMana(characterTemplate.Mana);
+                energyResetSystem.SetDefaultMana(characterTemplate.Energy);
 
                 if (PlayerPrefs.HasKey(saveDataPrefKey))
                 {
@@ -235,7 +235,7 @@ namespace CCGKit
                 CreateHpWidget(playerConfig.HpWidget, player, hp, characterTemplate.MaximumHp, shield);
                 CreateStatusWidget(playerConfig.StatusWidget, player);
 
-                manaWidget.Initialize(mana);
+                energyWidget.Initialize(energy);
 
                 var obj = player.GetComponent<CharacterObject>();
                 obj.Template = characterTemplate;
@@ -243,7 +243,7 @@ namespace CCGKit
                 { 
                     Hp = hp, 
                     Shield = shield,
-                    Mana = mana, 
+                    Energy = energy, 
                     Status = playerConfig.Status,
                     MaxHp = characterTemplate.MaximumHp
                 };

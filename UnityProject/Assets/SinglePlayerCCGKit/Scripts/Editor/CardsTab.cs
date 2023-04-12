@@ -219,7 +219,7 @@ namespace CCGKit
                     menu.AddItem(
                         new GUIContent("Deal damage range"), false, CreateEffectCallback, typeof(DealDamageRangeEffect));
                     menu.AddItem(
-                        new GUIContent("Gain mana"), false, CreateEffectCallback, typeof(GainManaEffect));
+                        new GUIContent("Gain mana"), false, CreateEffectCallback, typeof(GainEnergyEffect));
                     menu.AddItem(
                         new GUIContent("Gain HP"), false, CreateEffectCallback, typeof(GainHpEffect));
                     menu.AddItem(

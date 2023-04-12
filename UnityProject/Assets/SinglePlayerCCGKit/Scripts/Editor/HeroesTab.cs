@@ -89,8 +89,8 @@ namespace CCGKit
                                 EditorGUILayout.LabelField(
                                     new GUIContent("Mana", "The initial mana of this character."),
                                     GUILayout.Width(EditorGUIUtility.labelWidth));
-                                currentPlayer.Mana =
-                                    EditorGUILayout.IntField(currentPlayer.Mana, GUILayout.Width(30));
+                                currentPlayer.Energy =
+                                    EditorGUILayout.IntField(currentPlayer.Energy, GUILayout.Width(30));
                             }
                             GUILayout.EndHorizontal();
 

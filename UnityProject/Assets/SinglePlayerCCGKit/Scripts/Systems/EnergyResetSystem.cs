@@ -9,23 +9,23 @@ namespace CCGKit
     /// <summary>
     /// This system is responsible for resetting the hero's mana when their turn starts.
     /// </summary>
-    public class ManaResetSystem : BaseSystem
+    public class EnergyResetSystem : BaseSystem
     {
 #pragma warning disable 649
         [SerializeField]
         private PlayableCharacterConfiguration playerConfig;
 #pragma warning restore 649
 
-        private int defaultMana;
+        private int defaultEnergy;
 
         public void SetDefaultMana(int value)
         {
-            defaultMana = value;
+            defaultEnergy = value;
         }
 
         public void OnPlayerTurnBegan()
         {
-            playerConfig.Mana.SetValue(defaultMana);
+            playerConfig.Energy.SetValue(defaultEnergy);
         }
     }
 }
