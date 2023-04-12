@@ -237,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &89459411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &92817492
 Transform:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &624152984
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &758502932
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &855217384
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 119
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1787,7 +1787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1153854884
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2031,7 +2031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1224588966
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2633,7 +2633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1496012940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2762,7 +2762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b998fa42bdfc39428c01db0c9d5d10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSetPieceAmount: 1
+  activeSetPieceAmount: 3
 --- !u!1 &1527986042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,10 +3080,10 @@ Light:
   m_GameObject: {fileID: 1691219651}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.36983532, g: 0.7924528, b: 0.3339266, a: 0.6313726}
-  m_Intensity: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
   m_Range: 40
   m_SpotAngle: 36.5
   m_InnerSpotAngle: 15.8
@@ -3241,6 +3241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847195509}
+  - component: {fileID: 1847195510}
   m_Layer: 0
   m_Name: STAGE COORDINATOR
   m_TagString: Untagged
@@ -3265,6 +3266,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847195510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847195508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c57d68c40fcaf548876cc7a5e10f1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightSetups:
+  - lightColor: {r: 0.9622642, g: 0.22608629, b: 0.10590947, a: 1}
+    lightIntensity: 1
+    lights:
+    - {fileID: 899613805}
+  - lightColor: {r: 1, g: 1, b: 1, a: 1}
+    lightIntensity: 1
+    lights:
+    - {fileID: 899613805}
+  - lightColor: {r: 0.5251572, g: 0.9953085, b: 1, a: 1}
+    lightIntensity: 1
+    lights:
+    - {fileID: 899613805}
 --- !u!1 &1953260176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b998fa42bdfc39428c01db0c9d5d10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSetPieceAmount: 4
+  activeSetPieceAmount: 2
 --- !u!1 &2001853285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,7 +3454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2025871284
 SpriteRenderer:
   m_ObjectHideFlags: 0
