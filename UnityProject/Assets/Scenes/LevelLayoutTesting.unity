@@ -521,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511783434}
   - component: {fileID: 511783435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WurmieTest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 552498651}
   - component: {fileID: 552498652}
   m_Layer: 0
-  m_Name: SILOHETTED DOODADS - 30
+  m_Name: 30 - SILOHETTED DOODADS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 557644514}
   - component: {fileID: 557644515}
   m_Layer: 0
-  m_Name: DIVIDER - 10
+  m_Name: 10 - DIVIDERS
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1064,13 +1064,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835883524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4711674, y: 2.083758, z: -50.61377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1847195509}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855217383
 GameObject:
@@ -1294,8 +1294,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9622642, g: 0.78917545, b: 0.52198297, a: 1}
-  m_Intensity: 0.88
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
   m_Range: 4000
   m_SpotAngle: 70.2
   m_InnerSpotAngle: 15.8
@@ -1329,15 +1329,15 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.07
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -1370,7 +1370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903900694}
   - component: {fileID: 903900695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WurmieTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1454,7 +1454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946644991}
   m_Layer: 0
-  m_Name: CHARACTERS - 50
+  m_Name: '50 - CHARACTERS '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,7 +1975,7 @@ GameObject:
   - component: {fileID: 1191254944}
   - component: {fileID: 1191254945}
   m_Layer: 0
-  m_Name: FLOORS - 20
+  m_Name: 20 - FLOORS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2218,7 +2218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232008603}
   - component: {fileID: 1232008604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CaveDwellerTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2315,15 +2315,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308834147}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4711674, y: 2.083758, z: 49.38623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 899613806}
   - {fileID: 1691219653}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1847195509}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319703377
 GameObject:
@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 1507451033}
   - component: {fileID: 1507451034}
   m_Layer: 0
-  m_Name: SHADOWED DOODADS- 40
+  m_Name: 40 - SHADOWED DOODADS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3082,9 +3082,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.15
-  m_Range: 64.19
+  m_Color: {r: 0.36983532, g: 0.7924528, b: 0.3339266, a: 0.6313726}
+  m_Intensity: 0
+  m_Range: 40
   m_SpotAngle: 36.5
   m_InnerSpotAngle: 15.8
   m_CookieSize: 10
@@ -3117,7 +3117,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 128
@@ -3125,7 +3125,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.07
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -3140,14 +3140,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691219651}
-  m_LocalRotation: {x: 0.28182, y: -0, z: -0, w: 0.95946735}
-  m_LocalPosition: {x: 0, y: 5.625, z: -14.369}
+  m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
+  m_LocalPosition: {x: 0, y: 15, z: -75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1308834148}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 32.738, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!1 &1735176593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1735176594}
   - component: {fileID: 1735176595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WurmieTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3232,6 +3232,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1847195508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847195509}
+  m_Layer: 0
+  m_Name: STAGE COORDINATOR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1847195509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847195508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4711674, y: -2.083758, z: -49.38623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 835883527}
+  - {fileID: 1308834148}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953260176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,7 +3276,7 @@ GameObject:
   - component: {fileID: 1953260177}
   - component: {fileID: 1953260178}
   m_Layer: 0
-  m_Name: FOREGROUND DOODADS - 60
+  m_Name: 60 - FOREGROUND DOODADS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3680,7 +3713,7 @@ GameObject:
   - component: {fileID: 2139761049}
   - component: {fileID: 2139761050}
   m_Layer: 0
-  m_Name: BACKGROUND - 0
+  m_Name: 00 - BACKGROUND
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
