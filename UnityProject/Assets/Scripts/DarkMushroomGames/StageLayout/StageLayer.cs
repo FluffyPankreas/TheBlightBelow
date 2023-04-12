@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DarkMushroomGames.LevelLayout
+namespace DarkMushroomGames.StageLayout
 {
     public class StageLayer : MonoBehaviour
     {

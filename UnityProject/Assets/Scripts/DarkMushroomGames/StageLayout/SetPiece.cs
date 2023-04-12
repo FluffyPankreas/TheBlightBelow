@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DarkMushroomGames.LevelLayout
+namespace DarkMushroomGames.StageLayout
 {
     public class SetPiece : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace DarkMushroomGames.LevelLayout.Editor
+namespace DarkMushroomGames.StageLayout.Editor
 {
     [CustomEditor(typeof(StageLayer))]
     public class StageLayerEditor : UnityEditor.Editor
