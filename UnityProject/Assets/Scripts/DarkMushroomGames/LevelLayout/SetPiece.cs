@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SetPiece : MonoBehaviour
+namespace DarkMushroomGames.LevelLayout
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SetPiece : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
