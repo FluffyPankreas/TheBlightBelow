@@ -27,6 +27,7 @@ namespace CCGKit
             get { return _value;}
             set
             {
+                // Debug.Log("Changing " + name + " from " + _value + " to " + value);
                 _value = value; 
                 ValueChangedEvent?.Raise(_value);
             }

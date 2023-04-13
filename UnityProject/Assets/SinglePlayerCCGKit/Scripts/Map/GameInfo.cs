@@ -15,6 +15,11 @@ namespace CCGKit
 
         public SaveData SaveData = new SaveData();
 
+        public bool combatBonus = false;
+
+        public int defenseBonus = 10;
+        public int strengthBonus = 2;
+        
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);

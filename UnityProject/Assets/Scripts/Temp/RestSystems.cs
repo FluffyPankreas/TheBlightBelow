@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CCGKit;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RestSystems : MonoBehaviour
 {
@@ -22,11 +23,31 @@ public class RestSystems : MonoBehaviour
         _turnManagementSystem = GameObject.FindObjectOfType<TurnManagementSystem>();
     }
 
+    public void PrepareForBattle()
+    {
+        var gameInfo = FindObjectOfType<GameInfo>();
+
+        gameInfo.combatBonus = true;
+        
+        if (Random.Range(0f, 1f) < 0.5f)
+        {
+            gameInfo.defenseBonus = 10;
+            gameInfo.strengthBonus = 0;
+        }
+        else
+        {
+            gameInfo.defenseBonus = 0;
+            gameInfo.strengthBonus = 2;
+        }
+        
+        EndEncounter();
+    }
+
     public void EndRest()
     {
         var bootstrap = GameObject.FindObjectOfType<GameBootstrap>();
 
-        var maxHP = maxHpHackToGetItWorking;// TODO: This needs to be loaded in from the character template, or actually the current max HP of the character.
+        var maxHP = maxHpHackToGetItWorking;
         var amountToHeal = Mathf.RoundToInt(maxHP * percentToHeal);
 
         var newHealth = playerHP.Value + amountToHeal;
