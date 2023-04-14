@@ -103,9 +103,10 @@ namespace CCGKit
                     // TODO: Load the treasure stuff here.
                 }
                 
-                if (node.Type == NodeType.Unknown) 
+                if (node.Type == NodeType.Unknown)
                 {
-                    node.Encounter = unkowns.Encounters[0];
+                    var encounterIndex = UnityEngine.Random.Range(0, unkowns.Encounters.Count);
+                    node.Encounter = unkowns.Encounters[encounterIndex];
                     // TODO: Load the unknown stuff here.
                 }
                 

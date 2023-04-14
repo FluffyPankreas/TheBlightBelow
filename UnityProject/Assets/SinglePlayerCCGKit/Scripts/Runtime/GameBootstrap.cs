@@ -79,6 +79,8 @@ namespace CCGKit
         private GameObject restCanvas;
         [SerializeField] 
         private GameObject upgradeCanvas;
+        [SerializeField] 
+        private GameObject unknownCanvas;
         
         [Header("Pools")]
         [SerializeField]
@@ -134,8 +136,6 @@ namespace CCGKit
                     numAssetsToLoad++;
                 }
 
-                
-                
                 background.sprite = gameInfo.Encounter.Backgrounds[UnityEngine.Random.Range(0,gameInfo.Encounter.Backgrounds.Count)];
                 
                 switch (gameInfo.Encounter.EncounterType)
@@ -154,7 +154,7 @@ namespace CCGKit
                         break;
                     case NodeType.Unknown:
                         Debug.Log("Unknown encounter.");
-                        restCanvas.SetActive(true);
+                        unknownCanvas.SetActive(true);
                         break;
                     case NodeType.Altar:
                         Debug.Log("Altar encounter..");

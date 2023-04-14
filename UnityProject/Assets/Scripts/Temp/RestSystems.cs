@@ -59,12 +59,13 @@ public class RestSystems : MonoBehaviour
 
     public void EndEncounter()
     {
+        
         var gameInfo = FindObjectOfType<GameInfo>();
         gameInfo.PlayerWonEncounter = true;
         
         var turnManagementSystem = FindObjectOfType<TurnManagementSystem>();
         turnManagementSystem.SetEndOfGame(true);
-      
+        
         Transition.LoadLevel("Map", 0.5f, Color.black);
     }
 }
