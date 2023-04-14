@@ -11,6 +11,27 @@ namespace Temp
         public CardPileView cardPileView;
 
         public CardTemplateLibrary runDeck;
+
+        [SerializeField, Tooltip("Mutate Button")]
+        private GameObject mutateButton;
+
+        [SerializeField, Tooltip("Purify Button")]
+        private GameObject purifyButton;
+
+        public void Start()
+        {
+            mutateButton.SetActive(false);
+            purifyButton.SetActive(false);
+
+            if (Random.Range(0f, 1f) > 0.5f)
+            {
+                mutateButton.SetActive(true);
+            }
+            else
+            {
+                purifyButton.SetActive(true);
+            }
+        }
         
         public void OnClickMutate()
         {

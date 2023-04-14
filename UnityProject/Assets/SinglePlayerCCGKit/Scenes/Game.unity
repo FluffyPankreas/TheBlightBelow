@@ -5954,6 +5954,8 @@ MonoBehaviour:
   cardPileCanvas: {fileID: 868391474}
   cardPileView: {fileID: 210865840}
   runDeck: {fileID: 11400000, guid: 58d232b2b39586c438c2e5d3a92d24ff, type: 2}
+  mutateButton: {fileID: 1693360182}
+  purifyButton: {fileID: 1606994583}
 --- !u!1 &1693360182
 GameObject:
   m_ObjectHideFlags: 0
