@@ -28,7 +28,8 @@ namespace CCGKit
             NodeType.Rest,
             NodeType.Merchant,
             NodeType.Treasure,
-            NodeType.Unknown
+            NodeType.Unknown,
+            NodeType.Altar
         };
 
         private List<float> layerDistances;
@@ -95,13 +96,16 @@ namespace CCGKit
             var merchantChance = (int)(layer.MerchantNodeChance * 10);
             var unknownChance = (int)(layer.UnknownNodeChance * 10);
             var bossChance = (int)(layer.BossNodeChance * 10);
+            var altarChance = (int)(layer.AltarNodeChance * 10);
+            
             var totalRatio = enemyChance +
                 eliteChance +
                 restChance +
                 treasureChance +
                 merchantChance +
                 unknownChance +
-                bossChance;
+                bossChance +
+                altarChance;
             var x = rng.Next(0, totalRatio);
             if ((x -= enemyChance) < 0)
             {
@@ -126,6 +130,10 @@ namespace CCGKit
             else if ((x -= unknownChance) < 0)
             {
                 return NodeType.Unknown;
+            }
+            else if ((x -= unknownChance) < 0)
+            {
+                return NodeType.Altar;
             }
             else
             {

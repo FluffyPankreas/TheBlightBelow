@@ -36,6 +36,8 @@ namespace CCGKit
         private EncounterList treasures;
         [SerializeField] 
         private EncounterList unkowns;
+        [SerializeField] 
+        private EncounterList altars;
         
 #pragma warning restore 649
 
@@ -87,7 +89,7 @@ namespace CCGKit
                 if (node.Type == NodeType.Merchant) 
                 {
                     // TODO: Load the merchant stuff here.
-                    node.Encounter = merchants.Encounters[rng.Next(0, merchants.Encounters.Count - 1)];// Choose a random Merchant Encounter.
+                    node.Encounter = merchants.Encounters[rng.Next(0, merchants.Encounters.Count - 1)];
                 }
                 
                 if (node.Type == NodeType.Rest)
@@ -107,9 +109,11 @@ namespace CCGKit
                     // TODO: Load the unknown stuff here.
                 }
                 
-                
-
-
+                if (node.Type == NodeType.Altar) 
+                {
+                    node.Encounter = altars.Encounters[0];
+                    // TODO: Load the unknown stuff here.
+                }
             }
         }
 

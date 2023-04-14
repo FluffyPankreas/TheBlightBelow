@@ -146,14 +146,18 @@ namespace CCGKit
                         break;
                     case NodeType.Merchant:
                         Debug.Log("Merchant encounter.");
-                        upgradeCanvas.SetActive(true);
+                        restCanvas.SetActive(true);
                         break;
                     case NodeType.Treasure:
                         Debug.Log("Treasure encounter.");
-                        upgradeCanvas.SetActive(true);
+                        restCanvas.SetActive(true);
                         break;
                     case NodeType.Unknown:
                         Debug.Log("Unknown encounter.");
+                        restCanvas.SetActive(true);
+                        break;
+                    case NodeType.Altar:
+                        Debug.Log("Altar encounter..");
                         upgradeCanvas.SetActive(true);
                         break;
                     default:

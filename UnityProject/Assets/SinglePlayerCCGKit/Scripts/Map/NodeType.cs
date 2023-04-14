@@ -15,6 +15,7 @@ namespace CCGKit
         Treasure,
         Merchant,
         Unknown,
-        Boss
+        Boss,
+        Altar
     }
 }

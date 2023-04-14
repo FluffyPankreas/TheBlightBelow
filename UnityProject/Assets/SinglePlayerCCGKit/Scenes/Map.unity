@@ -525,6 +525,7 @@ MonoBehaviour:
   rests: {fileID: 11400000, guid: 03f5216cb42c5b541be38bc406d036b9, type: 2}
   treasures: {fileID: 11400000, guid: bb76e50751ed99c45a5aa22d32a591f2, type: 2}
   unkowns: {fileID: 11400000, guid: 7d2f0bca5fc7df14b9ca337b1f4220b1, type: 2}
+  altars: {fileID: 11400000, guid: d28bdbcac2a659e4ba048bf0a4560c02, type: 2}
 --- !u!4 &1509569525
 Transform:
   m_ObjectHideFlags: 0
