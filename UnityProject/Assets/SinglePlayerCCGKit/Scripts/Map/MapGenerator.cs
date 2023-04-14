@@ -107,7 +107,6 @@ namespace CCGKit
                 bossChance +
                 altarChance;
             var x = rng.Next(0, totalRatio);
-            Debug.Log(layer.name + " | X: " + x.ToString());
             if ((x -= enemyChance) <= 0)
             {
                 return NodeType.Enemy;
