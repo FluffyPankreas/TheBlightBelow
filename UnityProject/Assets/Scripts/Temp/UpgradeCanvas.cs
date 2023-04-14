@@ -76,7 +76,6 @@ namespace Temp
                 var upgradeTemplate = cardToUpgrade.ChaosUpgrade;
                 runDeck.Cards.Remove(cardToUpgrade);
                 runDeck.Cards.Add(upgradeTemplate);
-
             }
 
             if (upgradeType.Equals("O"))
@@ -99,7 +98,8 @@ namespace Temp
                 }
             }
             
+            mutateButton.SetActive(false);
+            purifyButton.SetActive(false);
         }
-
     }
 }
