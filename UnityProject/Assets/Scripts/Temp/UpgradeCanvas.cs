@@ -93,7 +93,6 @@ namespace Temp
                 gameInfo.SaveData.Deck.Clear();
                 foreach (var card in runDeck.Cards)
                 {
-                    Debug.Log("Adding " + card.Id);
                     gameInfo.SaveData.Deck.Add(card.Id);
                 }
             }
