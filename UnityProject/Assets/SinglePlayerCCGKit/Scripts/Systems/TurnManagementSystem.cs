@@ -22,7 +22,12 @@ namespace CCGKit
         public GameEvent PlayerTurnEnded;
         public GameEvent EnemyTurnBegan;
         public GameEvent EnemyTurnEnded;
-        public GameEvent EncounterEnded; 
+        public GameEvent EncounterEnded;
+
+        public IntVariable playerShield;
+        public StatusVariable playerStatus;
+
+        public StatusTemplate strengthStatus; // Todo: Refine this so it's better.
         
         private bool isEnemyTurn;
         private float accTime;
@@ -54,6 +59,22 @@ namespace CCGKit
         public void BeginPlayerTurn()
         {
             PlayerTurnBegan.Raise();
+            
+            var gameInfo = FindObjectOfType<GameInfo>();
+
+            if (gameInfo.combatBonus && gameInfo.Encounter.EncounterType == NodeType.Enemy)
+            {
+                Debug.Log("There is a combat bonus from a rest site. Defense: " + gameInfo.defenseBonus +
+                          " | Strength: " + gameInfo.strengthBonus);
+                // Add strength and/or defense
+                playerShield.Value += gameInfo.defenseBonus;
+
+                if (gameInfo.strengthBonus > 0)
+                {
+                    var currentValue = playerStatus.GetValue(strengthStatus.Name);
+                    playerStatus.SetValue(strengthStatus, currentValue + gameInfo.strengthBonus);
+                }
+            }
         }
 
         public void EndPlayerTurn()
