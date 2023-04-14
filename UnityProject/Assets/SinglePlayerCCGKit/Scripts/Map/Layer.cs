@@ -34,8 +34,9 @@ namespace CCGKit
         [Range(0f, 1f)]
         public float UnknownNodeChance;
         [Range(0f, 1f)]
-        public float BossNodeChance;
+        public float AltarNodeChance = 0f;
         [Range(0f, 1f)]
-        public float AltarNodeChance;
+        public float BossNodeChance;
+
     }
 }

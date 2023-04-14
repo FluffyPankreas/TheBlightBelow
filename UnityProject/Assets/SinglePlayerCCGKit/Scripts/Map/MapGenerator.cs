@@ -107,38 +107,43 @@ namespace CCGKit
                 bossChance +
                 altarChance;
             var x = rng.Next(0, totalRatio);
-            if ((x -= enemyChance) < 0)
+            Debug.Log(layer.name + " | X: " + x.ToString());
+            if ((x -= enemyChance) <= 0)
             {
                 return NodeType.Enemy;
             }
-            else if ((x -= eliteChance) < 0)
+
+            if ((x -= eliteChance) <= 0)
             {
                 return NodeType.Elite;
             }
-            else if ((x -= restChance) < 0)
+
+            if ((x -= restChance) <= 0)
             {
                 return NodeType.Rest;
             }
-            else if ((x -= treasureChance) < 0)
+
+            if ((x -= treasureChance) <= 0)
             {
                 return NodeType.Treasure;
             }
-            else if ((x -= merchantChance) < 0)
+
+            if ((x -= merchantChance) <= 0)
             {
                 return NodeType.Merchant;
             }
-            else if ((x -= unknownChance) < 0)
+
+            if ((x -= unknownChance) <= 0)
             {
                 return NodeType.Unknown;
             }
-            else if ((x -= unknownChance) < 0)
+
+            if ((x -= altarChance) <= 0)
             {
                 return NodeType.Altar;
             }
-            else
-            {
-                return NodeType.Boss;
-            }
+            
+            return NodeType.Boss;
         }
 
         private NodeType GetRandomNode()
