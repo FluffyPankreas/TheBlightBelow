@@ -24,4 +24,5 @@ MonoBehaviour:
   TreasureNodeChance: 0
   MerchantNodeChance: 0
   UnknownNodeChance: 0.3
-  BossNodeChance: 0
+  AltarNodeChance: 0
+  BossNodeChance: 0.1

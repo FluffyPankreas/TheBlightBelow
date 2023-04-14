@@ -36,6 +36,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39658e13211b94917be5b4ad97acbd10, type: 2}
   - {fileID: 11400000, guid: f9cffc0af34314fb28acdd845bd0722e, type: 2}
   - {fileID: 11400000, guid: 2be6253d3a42143d3a9b513e45dab39d, type: 2}
+  - {fileID: 11400000, guid: 9dfb1ee4501bbec4c98d1ddfac57a7d1, type: 2}
   NumStartingNodes:
     Min: 3
     Max: 5
