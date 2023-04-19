@@ -5,6 +5,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CCGKit
@@ -22,11 +23,20 @@ namespace CCGKit
 
         [SerializeField]
         private Button continueButton;
-        [SerializeField]
-        private Button rewardButton;
+        [FormerlySerializedAs("rewardButton")] [SerializeField]
+        private Button cardRewardButton;
+        [SerializeField] 
+        private Button artifactRewardButton;
+        [SerializeField] 
+        private Button goldRewardButton;
+        
 
         [SerializeField]
         private GameEvent cardRewardEvent;
+        [SerializeField]
+        private GameEvent artifactRewardEvent;
+        [SerializeField]
+        private GameEvent goldRewardEvent;
         [SerializeField]
         private Canvas popupCanvas;
 #pragma warning restore 649
@@ -41,6 +51,14 @@ namespace CCGKit
         private void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
+            var gameInfo = FindObjectOfType<GameInfo>();
+            if (gameInfo.Encounter.ArtifactRewards != null)
+            {
+                if (gameInfo.Encounter.ArtifactRewards.GetTemplateArtifacts().Count > 0)
+                {
+                    artifactRewardButton.gameObject.SetActive(true);
+                }
+            }
         }
 
         public void Show()
@@ -58,7 +76,7 @@ namespace CCGKit
 
         public void SetDefeatText()
         {
-            Destroy(rewardButton.gameObject);
+            Destroy(cardRewardButton.gameObject);
             titleText.text = DefeatText;
             descriptionText.text = DefeatDescriptionText;
             continueButton.gameObject.SetActive(false);
@@ -71,9 +89,23 @@ namespace CCGKit
 
         public void OnCardRewardButtonPressed()
         {
-            Destroy(rewardButton.gameObject);
+            Destroy(cardRewardButton.gameObject);
             popupCanvas.gameObject.SetActive(false);
             cardRewardEvent.Raise();
+        }
+
+        public void OnArtifactRewardButtonPressed()
+        {
+            Debug.Log("Artifact reward button pressed.");
+            Destroy(artifactRewardButton.gameObject);
+            artifactRewardEvent.Raise();
+        }
+
+        public void OnGoldRewardButtonPressed()
+        {
+            Debug.Log("Gold reward button pressed.");
+            Destroy(goldRewardButton.gameObject);
+            goldRewardEvent.Raise();
         }
     }
 }

@@ -21,15 +21,14 @@ namespace CCGKit
         {
             Canvas.gameObject.SetActive(true);
             View.AddCards(rewardCardsTemplate);
+        }
 
+        public void OnPlayerRedeemedArtifact()
+        {
             var encounter = FindObjectOfType<GameInfo>()!.Encounter;
-            var goldReward = Random.Range(encounter!.GoldRewardLow, encounter.GoldRewardHigh);
-            PlayerGold.Value += goldReward;
-
-            // Only select/roll for an artifact if there available for the encounter.
             if (encounter.ArtifactRewards != null)
             {
-                //TODO: This whole thing has to be fixed/improved/changed. 
+                //TODO: This whole thing has to be fixed/improved/changed.
                 if (encounter.ArtifactRewards.GetTemplateArtifacts().Count > 0)
                 {
                     var selectedIndex =
@@ -38,6 +37,14 @@ namespace CCGKit
                     CharacterManager.Instance.PickupArtifact(selectedArtifact);
                 }
             }
+        }
+
+        public void OnPlayerRedeemedGold()
+        {
+            var encounter = FindObjectOfType<GameInfo>()!.Encounter;
+            
+            var goldReward = Random.Range(encounter!.GoldRewardLow, encounter.GoldRewardHigh);
+            PlayerGold.Value += goldReward;
         }
     }
 }
