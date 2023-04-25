@@ -762,6 +762,7 @@ MonoBehaviour:
   restCanvas: {fileID: 478354602}
   upgradeCanvas: {fileID: 1654942442}
   unknownCanvas: {fileID: 903708850}
+  treasureCanvas: {fileID: 0}
   cardPool: {fileID: 1206160566}
   runDeck: {fileID: 11400000, guid: 58d232b2b39586c438c2e5d3a92d24ff, type: 2}
   fullDeck: {fileID: 11400000, guid: 8cc13a62cd2785146a6a2edf81340011, type: 2}

@@ -8,6 +8,7 @@ using GameSystems;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace CCGKit
@@ -81,6 +82,8 @@ namespace CCGKit
         private GameObject upgradeCanvas;
         [SerializeField] 
         private GameObject unknownCanvas;
+        [SerializeField] 
+        private GameObject treasureCanvas;
         
         [Header("Pools")]
         [SerializeField]
@@ -150,7 +153,8 @@ namespace CCGKit
                         break;
                     case NodeType.Treasure:
                         Debug.Log("Treasure encounter.");
-                        restCanvas.SetActive(true);
+                        SceneManager.LoadScene($"TreasureEncounter", LoadSceneMode.Additive);
+                        //treasureCanvas.SetActive(true);
                         break;
                     case NodeType.Unknown:
                         Debug.Log("Unknown encounter.");
@@ -254,7 +258,6 @@ namespace CCGKit
                 obj.Character.Status.Value.Clear();
 
                 playerConfig.DrawCount.Value = characterTemplate.BaseDrawAmount;
-                
                 
                 numAssetsLoaded++;
                 InitializeGame();
