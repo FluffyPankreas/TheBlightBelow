@@ -33,16 +33,21 @@ namespace DarkMushroomGames.StageLayout.Editor
             EditorGUILayout.BeginVertical();
             if (GUILayout.Button("Attach Set Piece components"))
             {
-                foreach (Transform child in currentTarget!.transform)
+                foreach (Transform child in currentTarget!.GetComponentsInChildren<Transform>(true))
                 {
-                    if (child.GetComponent<SetPiece>() == null)
+                    while (child.GetComponent<SetPiece>() != null)
                     {
-                        Undo.RecordObject(child, "Adding set pieces.");
-                        child.gameObject.AddComponent<SetPiece>();
+                        DestroyImmediate(child.GetComponent<SetPiece>());
                     }
                 }
+
+                foreach (Transform child in currentTarget!.transform)
+                {
+                    Undo.RecordObject(child, "Adding set pieces.");
+                    child.gameObject.AddComponent<SetPiece>();
+                }
             }
-            
+
             if (GUILayout.Button("Zero out Set Pieces"))
             {
                 foreach (Transform child in currentTarget!.transform)
