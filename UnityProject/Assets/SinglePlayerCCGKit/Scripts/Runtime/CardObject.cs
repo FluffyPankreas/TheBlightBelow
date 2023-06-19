@@ -92,7 +92,7 @@ namespace CCGKit
             Template = card.Template;
             costText.text = Template.Cost.ToString();
             nameText.text = Template.Name;
-            typeText.text = "Spell";//TODO: Load the actual card type here. 
+//            typeText.text = "Spell";//TODO: Load the actual card type here. 
 
             descriptionText.text = Template.RulesText;
             if (descriptionText.text.Equals(""))
