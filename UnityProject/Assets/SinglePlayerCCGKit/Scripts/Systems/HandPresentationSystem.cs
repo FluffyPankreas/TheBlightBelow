@@ -37,7 +37,7 @@ namespace CCGKit
 
         private const float CenterRadius = 16.0f;
         private readonly Vector3 centerPoint = new Vector3(0.0f, -20.5f, 0.0f);
-        private readonly Vector3 originalCardScale = new Vector3(0.6f, 0.6f, 1.0f);
+        private readonly Vector3 originalCardScale = new Vector3(0.2f, 0.2f, 1.0f);
 
         public static float CardToDiscardPileAnimationTime = 0.3f;
 
@@ -87,7 +87,6 @@ namespace CCGKit
             obj.SetInfo(card);
             obj.SetGlowEnabled(playerMana.Value);
             go.transform.position = deckWidget.transform.position;
-            go.transform.localScale = Vector3.zero;
 
             return go;
         }
