@@ -16,6 +16,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 0
   Value: 0
+  damageType: {fileID: 0}
 --- !u!114 &-7769228015276480921
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +82,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &-5504878177794820081
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +149,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 6
+  damageType: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +167,7 @@ MonoBehaviour:
   Cost: 3
   RulesText: 
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  Picture: {fileID: 21300000, guid: e9f7b82b3d12e9d4bb09749dc021f7ec, type: 3}
+  Picture: {fileID: 21300000, guid: 594d9531b678707479472fd1566f4b19, type: 3}
   Type: {fileID: 11400000, guid: a9ea2ae22734eea43913d97ecccd577b, type: 2}
   Class: {fileID: 11400000, guid: bc5cf971ac0e88f41b85e98f56d14cdb, type: 2}
   ChaosUpgrade: {fileID: 0}
@@ -205,6 +208,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 0
   Value: 0
+  damageType: {fileID: 0}
 --- !u!114 &1925252649151010864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +225,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &1936692226030729205
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +275,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &4829373377171347763
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,3 +292,4 @@ MonoBehaviour:
   TargetActions: []
   Target: 2
   Value: 5
+  damageType: {fileID: 0}

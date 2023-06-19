@@ -16,6 +16,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 0
   Value: 0
+  damageType: {fileID: 0}
 --- !u!114 &-7612169369462888944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,6 +66,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &-5504878177794820081
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +133,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 6
+  damageType: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +151,7 @@ MonoBehaviour:
   Cost: 1
   RulesText: Deal 5 damage to all enemies.
   Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  Picture: {fileID: 21300000, guid: 045030cc4b3d372498d1efbed1577ab1, type: 3}
+  Picture: {fileID: 21300000, guid: 39e351964e371404bb33efd98682f19f, type: 3}
   Type: {fileID: 11400000, guid: 52b093f5006cf7c40883b91107cef4b3, type: 2}
   Class: {fileID: 11400000, guid: bc5cf971ac0e88f41b85e98f56d14cdb, type: 2}
   ChaosUpgrade: {fileID: 0}
@@ -188,6 +191,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 0
   Value: 0
+  damageType: {fileID: 0}
 --- !u!114 &1925252649151010864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,6 +208,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &2217424324372293463
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +242,7 @@ MonoBehaviour:
   TargetActions: []
   Target: 1
   Value: 2
+  damageType: {fileID: 0}
 --- !u!114 &4829373377171347763
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,3 +259,4 @@ MonoBehaviour:
   TargetActions: []
   Target: 2
   Value: 5
+  damageType: {fileID: 0}
