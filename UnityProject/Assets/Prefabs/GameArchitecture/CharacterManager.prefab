@@ -50,6 +50,7 @@ MonoBehaviour:
   PrintTrace: 0
   artifactInventory: {fileID: 11400000, guid: 211d9f3fdcb6e064ebbb64be2007dc9d, type: 2}
   playerEncounterDefense: {fileID: 11400000, guid: 8529176b802cc4558aa5576c19888370, type: 2}
+  playerGold: {fileID: 11400000, guid: 4ac4f6d5d31017a4baab3a6d344cbbd9, type: 2}
   defenseType: {fileID: 11400000, guid: f94c639fb819bad40a1117b2c82d6df2, type: 2}
 --- !u!114 &5377353900665509671
 MonoBehaviour:
