@@ -25,6 +25,8 @@ namespace DarkMushroomGames.GameArchitecture
             artifacts.Add(newArtifactTemplate);
         }
 
+        public int Count => artifacts.Count;
+
         /// <summary>
         /// Gets the list of artifact templates in this library.
         /// </summary>

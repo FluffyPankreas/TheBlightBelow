@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using CCGKit;
 using UnityEngine;
+using DarkMushroomGames.Architecture;
 using Random = UnityEngine.Random;
 
-public class RestSystems : MonoBehaviour
+public class RestSystems : MonoBehaviourSingleton<RestSystems>
 {
     [SerializeField, Tooltip("The HP variable that needs to be set.")]
     private IntVariable playerHP;
@@ -57,7 +58,7 @@ public class RestSystems : MonoBehaviour
         EndEncounter();
     }
 
-    public void EndEncounter()
+    public static void EndEncounter()
     {
         
         var gameInfo = FindObjectOfType<GameInfo>();

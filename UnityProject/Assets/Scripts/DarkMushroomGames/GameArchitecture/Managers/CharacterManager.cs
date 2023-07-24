@@ -1,6 +1,5 @@
 using CCGKit;
 using DarkMushroomGames.Architecture;
-using GameArchitecture;
 using UnityEngine;
 
 namespace DarkMushroomGames.GameArchitecture.Managers
@@ -23,10 +22,13 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         [SerializeField,Tooltip("The runtime variable for updating the player defense during an encounter.")]
         private IntVariable playerEncounterDefense;
         
+        [SerializeField,Tooltip("The player's current gold.")]
+        private IntVariable playerGold;
+        
         [Header("Modifiers to process")]
         [SerializeField,Tooltip("The modifier type that the manager associates with processing defensive effects.")]
         private ModifierType defenseType;
-        
+
         /// <summary>
         /// Handles events for when the modifier queue changes. It checks for relevant modifiers and applies
         /// effects appropriately. 
@@ -40,6 +42,15 @@ namespace DarkMushroomGames.GameArchitecture.Managers
         {
             // Debug.Log("New artifact picked up: " + newArtifact.ArtifactName);
             artifactInventory.AddArtifactTemplate(newArtifact);
+        }
+
+        /// <summary>
+        /// Adds gold to the current amount of gold the player has. 
+        /// </summary>
+        /// <param name="amountToAdd">The amount to add to the current gold.</param>
+        public void AddGold(int amountToAdd)
+        {
+            playerGold.Value += amountToAdd;
         }
 
         public void OnEncounterStart()
